@@ -30,10 +30,10 @@ export const SignUp = () => {
             alt=""
           />
 
-          <div className="px-5 flex flex-col justify-center h-screen  lg:w-1/2 lg:flex lg:items-center">
+          <div className="px-5 flex flex-col justify-center h-screen lg:w-1/2 lg:flex lg:items-center">
             <div className="lg:w-1/2 lg:-ml-[180px]">
               <div>
-                <h1 className="font-medium text-4xl ">Create your account</h1>
+                <h1 className="font-medium text-4xl">Create your account</h1>
 
                 <h2 className="text-lg mt-2 text-gray-500">
                   Enter the fields below to get started.
