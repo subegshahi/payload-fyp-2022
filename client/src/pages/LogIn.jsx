@@ -15,8 +15,8 @@ export const LogIn = () => {
     <>
       {/* <Header /> */}
 
-      <section className="bg-gray-50">
-        <div className=" lg:flex">
+      <section>
+        <div className="lg:flex">
           <img
             className="hidden lg:inline-block w-1/2 h-screen"
             src={flyingAircraft}
@@ -32,7 +32,7 @@ export const LogIn = () => {
               />
 
               <div>
-                <h1 className="font-medium text-4xl">Welcome back</h1>
+                <h1 className="font-medium text-4xl mt-10">Welcome back</h1>
                 <h2 className="text-lg mt-2 text-gray-500">
                   Please enter your details.
                 </h2>
