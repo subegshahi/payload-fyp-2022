@@ -12,7 +12,7 @@ import {
 
 export const SignUp = () => {
   return (
-    <div>
+    <>
       {/* <Header /> */}
 
       <section>
@@ -126,6 +126,6 @@ export const SignUp = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };

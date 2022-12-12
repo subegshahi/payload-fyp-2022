@@ -13,7 +13,7 @@ export const Header = () => {
 
         <nav className="hidden md:block space-x-10 ">
           <Link
-            className="text-gray-500 font-medium  hover:text-gray-900"
+            className="text-gray-500 font-medium hover:text-gray-900"
             to="/"
           >
             Home

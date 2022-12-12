@@ -12,7 +12,7 @@ import { RxCrossCircled } from "react-icons/rx";
 
 export const LogIn = () => {
   return (
-    <div>
+    <>
       {/* <Header /> */}
 
       <section>
@@ -92,6 +92,6 @@ export const LogIn = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };

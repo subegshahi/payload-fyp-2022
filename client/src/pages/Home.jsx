@@ -3,7 +3,7 @@ import { Header, Footer } from "../components/export";
 
 export const Home = () => {
   return (
-    <div>
+    <>
       <Header />
 
       <main className="bg-gray-50">
@@ -24,6 +24,6 @@ export const Home = () => {
       </main>
 
       <Footer />
-    </div>
+    </>
   );
 };
