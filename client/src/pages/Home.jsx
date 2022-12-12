@@ -12,7 +12,7 @@ export const Home = () => {
         <div className="relative bg-emerald-600 h-72 w-full">
           <div className="max-w-7xl mx-auto px-5 py-5">
             <p className="text-2xl font-bold text-white">
-              Lorem ipsum dolor sit amet.
+              Deserunt, voluptatibus quisquam esse explicabo consectetur
             </p>
           </div>
         </div>
@@ -43,6 +43,41 @@ export const Home = () => {
               <FormInput label={"Departure"} type={"date"} />
 
               <FormInput label={"Return"} type={"date"} />
+            </div>
+
+            <div className="mt-5">
+              <label
+                className="font-medium text-base text-gray-600 "
+                htmlFor=""
+              >
+                Travellers
+              </label>
+
+              <div className="grid grid-cols-2  mt-2">
+                <div className="flex gap-2 items-center">
+                  <button className="bg-emerald-200 text-emerald-900 font-bold text-lg rounded-md w-1/4 inline-block">
+                    +
+                  </button>
+
+                  <p className=" text-gray-600">1 Adult</p>
+
+                  <button className="bg-emerald-200 text-emerald-900 font-bold text-lg rounded-md w-1/4 inline-block">
+                    -
+                  </button>
+                </div>
+
+                <div className="flex gap-2 items-center">
+                  <button className="bg-emerald-200 text-emerald-900 font-bold text-lg rounded-md w-1/4 inline-block">
+                    +
+                  </button>
+
+                  <p className=" text-gray-600">1 Child</p>
+
+                  <button className="bg-emerald-200 text-emerald-900 font-bold text-lg rounded-md w-1/4 inline-block">
+                    -
+                  </button>
+                </div>
+              </div>
             </div>
 
             <Link
