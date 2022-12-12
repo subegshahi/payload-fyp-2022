@@ -6,7 +6,7 @@ import { payloadLogo } from "../assets/export";
 export const Header = () => {
   return (
     <header className="border-b-2 border-gray-200">
-      <div className="max-w-7xl mx-auto flex items-center justify-between  px-5 py-2">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-5 py-2">
         <div className="flex-1">
           <img className="w-20" src={payloadLogo} alt="header logo" />
         </div>

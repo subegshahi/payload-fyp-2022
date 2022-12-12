@@ -15,8 +15,8 @@ export const SignUp = () => {
     <>
       {/* <Header /> */}
 
-      <section>
-        <div className="bg-gray-50 lg:flex">
+      <section className="bg-gray-50 h-screen">
+        <div className=" lg:flex">
           {/* <Link
             className="absolute right-28 top-5 font-medium lg:right-64"
             to="/"
@@ -30,7 +30,7 @@ export const SignUp = () => {
             alt=""
           />
 
-          <div className="px-5 flex flex-col justify-center h-screen lg:w-1/2 lg:flex lg:items-center">
+          <div className="px-5 flex flex-col justify-center py-10 lg:w-1/2 lg:flex lg:items-center">
             <div className="lg:w-1/2 lg:-ml-[180px]">
               <div>
                 <h1 className="font-medium text-4xl">Create your account</h1>
