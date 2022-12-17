@@ -41,7 +41,7 @@ export const Header = () => {
           </Link>
 
           <Link
-            className="inline-block text-white font-medium bg-emerald-700 px-4 py-2 rounded-md hover:bg-emerald-600"
+            className="inline-block text-white font-medium bg-brand-500 px-4 py-2 rounded-md hover:bg-brand-400"
             to="/signup"
           >
             Sign up

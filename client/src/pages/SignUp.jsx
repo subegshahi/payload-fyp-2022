@@ -8,23 +8,12 @@ export const SignUp = () => {
     <>
       {/* <Header /> */}
 
-      <section>
-        <div className="lg:flex">
-          {/* <Link
-            className="absolute right-28 top-5 font-medium lg:right-64"
-            to="/"
-          >
-            <RxCrossCircled className="inline-block" size={50} />
-          </Link> */}
-
-          <img
-            className="hidden lg:inline-block w-1/2 h-screen"
-            src={aircraft}
-            alt=""
-          />
+      <section className="w-full h-screen flex">
+        <div className="hidden lg:block w-1/2">
+          <img className="h-screen" src={aircraft} alt="" />
         </div>
 
-        <div className="px-5 flex flex-col h-screen lg:w-1/2 lg:flex lg:items-center">
+        <div className="w-full flex justify-center items-center lg:w-1/2 lg:mr-[90px]">
           <SignUpForm />
         </div>
       </section>

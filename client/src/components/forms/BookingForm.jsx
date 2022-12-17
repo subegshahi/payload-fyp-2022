@@ -3,27 +3,27 @@ import { Link } from "react-router-dom";
 
 export const BookingForm = () => {
   return (
-    <form>
-      <div className="bg-white rounded-md shadow-md p-5">
-        <div className="grid grid-cols-2">
-          <div className="space-x-2">
-            <input type="radio" />
-            <label>Round Trip</label>
-          </div>
-
-          <div className="space-x-2">
-            <input type="radio" />
-            <label>One Way</label>
-          </div>
+    <form className="bg-white rounded-md shadow-md p-5">
+      <div className="flex gap-10">
+        <div className="space-x-2">
+          <input type="radio" />
+          <label>One Way</label>
         </div>
 
+        <div className="space-x-2">
+          <input type="radio" />
+          <label>Round Trip</label>
+        </div>
+      </div>
+
+      <div className="lg:flex gap-5 [&>*]:basis-full">
         <div className="flex flex-col mt-5">
           <label className="font-medium text-base text-gray-600" htmlFor="">
             From
           </label>
 
           <input
-            className="border border-gray-300 py-2 rounded-md mt-2 px-4 focus:outline-none focus:border-emerald-700 focus:ring-1 focus:ring-emerald-700"
+            className="border border-gray-300 py-2 rounded-md mt-2 px-4 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500"
             type="text"
             placeholder="Nepalgunj (KEP)"
             name=""
@@ -37,7 +37,7 @@ export const BookingForm = () => {
           </label>
 
           <input
-            className="border border-gray-300 py-2 rounded-md mt-2 px-4 focus:outline-none focus:border-emerald-700 focus:ring-1 focus:ring-emerald-700"
+            className="border border-gray-300 py-2 rounded-md mt-2 px-4 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-400"
             type="text"
             placeholder="RARA (RARA)"
             name=""
@@ -52,7 +52,7 @@ export const BookingForm = () => {
             </label>
 
             <input
-              className="border border-gray-300 py-2 rounded-md mt-2 px-4 focus:outline-none focus:border-emerald-700 focus:ring-1 focus:ring-emerald-700"
+              className="border border-gray-300 py-2 rounded-md mt-2 px-4 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-400"
               type="date"
               name=""
               id=""
@@ -65,7 +65,7 @@ export const BookingForm = () => {
             </label>
 
             <input
-              className="border border-gray-300 py-2 rounded-md mt-2 px-4 focus:outline-none focus:border-emerald-700 focus:ring-1 focus:ring-emerald-700"
+              className="border border-gray-300 py-2 rounded-md mt-2 px-4 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-400"
               type="date"
               name=""
               id=""
@@ -78,53 +78,40 @@ export const BookingForm = () => {
             Travellers
           </label>
 
-          <div className="grid grid-cols-2  mt-2">
-            <div className="flex gap-2 items-center">
-              <button className="bg-emerald-200 text-emerald-900 font-bold text-lg rounded-md w-1/4 inline-block">
+          <div className="mt-2 grid grid-cols-2 gap-5">
+            <div className="flex gap-2 items-center [&>*]:basis-full">
+              <button className="bg-brand-100 text-brand-500 font-bold text-lg rounded-md w-1/4 inline-block">
                 +
               </button>
 
-              <p className=" text-gray-600">1 Adult</p>
+              <p className=" text-gray-600 text-center">1 Adult</p>
 
-              <button className="bg-emerald-200 text-emerald-900 font-bold text-lg rounded-md w-1/4 inline-block">
+              <button className="bg-brand-100 text-brand-500 font-bold text-lg rounded-md w-1/4 inline-block">
                 -
               </button>
             </div>
 
-            <div className="flex gap-2 items-center">
-              <button className="bg-emerald-200 text-emerald-900 font-bold text-lg rounded-md w-1/4 inline-block">
+            <div className="flex gap-2 items-center [&>*]:basis-full">
+              <button className="bg-brand-100 text-brand-500 font-bold text-lg rounded-md w-1/4 inline-block">
                 +
               </button>
 
-              <p className=" text-gray-600">1 Child</p>
+              <p className=" text-gray-600 text-center">1 Child</p>
 
-              <button className="bg-emerald-200 text-emerald-900 font-bold text-lg rounded-md w-1/4 inline-block">
+              <button className="bg-brand-100 text-brand-500 font-bold text-lg rounded-md w-1/4 inline-block">
                 -
               </button>
             </div>
           </div>
         </div>
-
-        <Link
-          className="inline-block text-white font-medium bg-emerald-700 px-4 py-3 rounded-md mt-5 w-full text-center hover:bg-emerald-600"
-          to="/"
-        >
-          Search Flight
-        </Link>
-
-        {/* <div className="flex flex-col mt-5">
-        <label className="font-medium text-base text-gray-600" htmlFor="">
-          From
-        </label>
-
-        <input
-          className="border border-gray-300 py-2 rounded-md mt-2 px-4 focus:outline-none focus:border-emerald-700 focus:ring-1 focus:ring-emerald-700"
-          type="text"
-          name=""
-          id=""
-        />
-      </div> */}
       </div>
+
+      <Link
+        className="inline-block text-white font-medium bg-brand-500 px-4 py-3 rounded-md mt-5 w-full text-center   hover:bg-brand-400"
+        to="/"
+      >
+        Search Flight
+      </Link>
     </form>
   );
 };

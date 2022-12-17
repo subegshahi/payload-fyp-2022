@@ -8,16 +8,12 @@ export const LogIn = () => {
     <>
       {/* <Header /> */}
 
-      <section>
-        <div className="lg:flex">
-          <img
-            className="hidden lg:inline-block w-1/2 h-screen"
-            src={flyingAircraft}
-            alt=""
-          />
+      <section className="w-full h-screen flex">
+        <div className="hidden lg:block w-1/2">
+          <img className="h-screen" src={flyingAircraft} alt="" />
         </div>
 
-        <div className="px-5 flex flex-col justify-center h-screen lg:w-1/2 lg:flex lg:items-center">
+        <div className="w-full flex justify-center items-center lg:w-1/2 lg:mr-[90px]">
           <LogInForm />
         </div>
       </section>

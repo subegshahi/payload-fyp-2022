@@ -12,14 +12,14 @@ export const Error = () => {
           </div>
 
           <div className="mt-5">
-            <p className="font-bold text-7xl text-emerald-700">404</p>
+            <p className="font-bold text-7xl text-brand-500">404</p>
             <p className="mt-5 font-bold text-5xl">Page not found</p>
             <p className="mt-5 text-lg  text-gray-600">
               Sorry, we couldn't find the page you're looking for.
             </p>
 
             <Link
-              className="inline-block text-white font-medium bg-emerald-700 px-4 py-2 rounded-md text-center mt-5 w-full hover:bg-emerald-600"
+              className="inline-block text-white font-medium bg-brand-500 px-4 py-2 rounded-md text-center mt-5 w-full hover:bg-brand-400"
               to="/"
             >
               Go back home
