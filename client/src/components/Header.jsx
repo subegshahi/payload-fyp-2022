@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
-import { payloadLogo } from "../assets/export";
+import { payloadLogo } from "../assets/imports";
 
 export const Header = () => {
   return (

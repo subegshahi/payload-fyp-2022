@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, LogIn, SignUp, Error } from "./pages/export";
+import { Home, LogIn, SignUp, Error } from "./pages/imports";
 
 export const Layout = () => {
   return (
