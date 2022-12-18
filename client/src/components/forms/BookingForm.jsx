@@ -17,32 +17,34 @@ export const BookingForm = () => {
       </div>
 
       <div className="lg:flex gap-5 [&>*]:basis-full">
-        <div className="flex flex-col mt-5">
-          <label className="font-medium text-base text-gray-600" htmlFor="">
-            From
-          </label>
+        <div className="lg:flex gap-5 [&>*]:basis-full">
+          <div className="flex flex-col mt-5">
+            <label className="font-medium text-base text-gray-600" htmlFor="">
+              From
+            </label>
 
-          <input
-            className="border border-gray-300 py-2 rounded-md mt-2 px-4 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500"
-            type="text"
-            placeholder="Nepalgunj (KEP)"
-            name=""
-            id=""
-          />
-        </div>
+            <input
+              className="border border-gray-300 py-2 rounded-md mt-2 px-4 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500"
+              type="text"
+              placeholder="Nepalgunj (KEP)"
+              name=""
+              id=""
+            />
+          </div>
 
-        <div className="flex flex-col mt-5">
-          <label className="font-medium text-base text-gray-600" htmlFor="">
-            To
-          </label>
+          <div className="flex flex-col mt-5">
+            <label className="font-medium text-base text-gray-600" htmlFor="">
+              To
+            </label>
 
-          <input
-            className="border border-gray-300 py-2 rounded-md mt-2 px-4 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-400"
-            type="text"
-            placeholder="RARA (RARA)"
-            name=""
-            id=""
-          />
+            <input
+              className="border border-gray-300 py-2 rounded-md mt-2 px-4 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-400"
+              type="text"
+              placeholder="RARA (RARA)"
+              name=""
+              id=""
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-2 gap-5">
@@ -72,8 +74,10 @@ export const BookingForm = () => {
             />
           </div>
         </div>
+      </div>
 
-        <div className="mt-5">
+      <div className="lg:flex justify-center items-center gap-5 [&>*]:basis-full">
+        <div className="mt-5 lg:w-1/2">
           <label className="font-medium text-base text-gray-600 " htmlFor="">
             Travellers
           </label>
@@ -104,14 +108,14 @@ export const BookingForm = () => {
             </div>
           </div>
         </div>
-      </div>
 
-      <Link
-        className="inline-block text-white font-medium bg-brand-500 px-4 py-3 rounded-md mt-5 w-full text-center   hover:bg-brand-400"
-        to="/"
-      >
-        Search Flight
-      </Link>
+        <Link
+          className="inline-block text-white font-medium bg-brand-500 px-4 py-3 rounded-md mt-5 w-full text-center lg:mt-12   hover:bg-brand-400"
+          to="/"
+        >
+          Search Flight
+        </Link>
+      </div>
     </form>
   );
 };

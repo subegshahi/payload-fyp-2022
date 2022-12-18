@@ -4,7 +4,7 @@ import { Home, LogIn, SignUp, Error } from "./pages/imports";
 
 export const Layout = () => {
   return (
-    <main className="text-gray-800">
+    <main>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
