@@ -1,7 +1,6 @@
 import React from "react";
 import { BookingForm } from "../components/forms/BookingForm";
-import { Header, Footer } from "../components/imports";
-import { boardingPass } from "../assets/imports";
+import { Header, Footer, HeroComponent } from "../components/imports";
 
 export const Home = () => {
   return (
@@ -12,17 +11,7 @@ export const Home = () => {
         <div className="bg-gradient-to-t from-[#0077FF] to-[#65C8FF] h-fit w-full">
           <div className="max-w-7xl mx-auto px-5 py-5">
             <div className="flex mt-10">
-              <div className="lg:w-1/2 flex justify-center items-center">
-                <p className="text-4xl font-bold text-white mt-5">
-                  Deserunt, voluptatibus quisquam esse explicabo consectetur
-                </p>
-              </div>
-
-              <img
-                className="hidden lg:inline-block w-1/2 aspect-video object-cover"
-                src={boardingPass}
-                alt=""
-              />
+              <HeroComponent />
             </div>
 
             <div className="max-w-lg mx-auto lg:max-w-7xl mt-10 pb-10">

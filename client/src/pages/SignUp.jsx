@@ -7,7 +7,6 @@ export const SignUp = () => {
   return (
     <>
       {/* <Header /> */}
-
       <section className="w-full h-screen flex">
         <div className="hidden lg:block w-1/2">
           <img className="h-screen" src={aircraft} alt="" />
