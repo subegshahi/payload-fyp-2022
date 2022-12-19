@@ -21,7 +21,7 @@ export const Home = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-5">
-          <div className="h-[500px] bg-gray-400 mt-10"></div>
+          <div className="h-[600px] border border-gray-300 rounded-xl mt-10" />
         </div>
       </main>
 
