@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const BookingForm = () => {
   return (
-    <form className="bg-white rounded-xl shadow-md p-5">
+    <form className="bg-white rounded-md shadow-md p-5">
       <div className="flex gap-10">
         <div className="space-x-2">
           <input type="radio" />

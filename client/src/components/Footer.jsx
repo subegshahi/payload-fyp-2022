@@ -8,8 +8,8 @@ import {
 export const Footer = () => {
   return (
     <footer>
-      <div className="max-w-7xl mx-auto border-t-2 border-gray-200 px-5">
-        <div className="flex flex-col gap-5 items-center justify-between my-10 sm:flex-row ">
+      <div className="max-w-7xl mx-auto border-t-2 border-gray-200 px-5 mt-10">
+        <div className="flex flex-col gap-5 items-center justify-between my-6 sm:flex-row ">
           <p className="text-lg text-gray-500">
             &#169; 2022 Payload. All rights reserved
           </p>
