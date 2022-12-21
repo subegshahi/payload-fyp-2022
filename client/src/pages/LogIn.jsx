@@ -1,6 +1,6 @@
 import React from "react";
 import { Header, Footer } from "../components/imports";
-import { flyingAircraft } from "../assets/imports";
+import { flyingAircraft, document } from "../assets/imports";
 import { LogInForm } from "../components/forms/LogInForm";
 
 export const LogIn = () => {

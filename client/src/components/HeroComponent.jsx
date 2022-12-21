@@ -1,5 +1,5 @@
 import React from "react";
-import { boardingPass } from "../assets/imports";
+import { boardingPass, document } from "../assets/imports";
 
 export const HeroComponent = () => {
   return (
@@ -11,8 +11,8 @@ export const HeroComponent = () => {
       </div>
 
       <img
-        className="hidden lg:inline-block w-1/2 aspect-video object-cover"
-        src={boardingPass}
+        className="hidden lg:inline-block w-1/2 h-[450px]"
+        src={document}
         alt=""
       />
     </>

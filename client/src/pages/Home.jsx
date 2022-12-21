@@ -8,7 +8,7 @@ export const Home = () => {
       <Header />
 
       <main>
-        <div className="bg-gradient-to-t from-[#0077FF] to-[#65C8FF] h-fit w-full">
+        <div className="bg-gradient-to-b from-[#3a96ff] to-[#2eb6ff] h-fit w-full">
           <div className="max-w-7xl mx-auto px-5 py-5">
             <div className="flex mt-10">
               <HeroComponent />
