@@ -85,7 +85,7 @@ export const SignUpForm = () => {
         to=""
       >
         <img className="inline-block w-8 " src={google} alt="" />
-        <span className="inline-block ml-2">Sign in with Google</span>
+        <span className="inline-block ml-2">Continue with Google</span>
       </Link>
 
       <p className="text-gray-500 mt-5 text-center">

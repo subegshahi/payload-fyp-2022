@@ -1,5 +1,5 @@
 import React from "react";
-import { BookingForm } from "../components/forms/BookingForm";
+import { BookingForm } from "../components/home/BookingForm";
 import { Header, Footer, HeroComponent } from "../components/imports";
 
 export const Home = () => {

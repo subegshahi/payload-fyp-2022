@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
-import { payloadLogo } from "../assets/imports";
+import { payloadLogo } from "../../assets/imports";
 
 export const Header = () => {
   return (
@@ -37,7 +37,7 @@ export const Header = () => {
             className="inline-block text-gray-500 font-medium hover:text-gray-900"
             to="/login"
           >
-            Sign in
+            Log in
           </Link>
 
           <Link

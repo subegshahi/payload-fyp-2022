@@ -1,5 +1,5 @@
 import React from "react";
-import { boardingPass, document } from "../assets/imports";
+import { boardingPass, document } from "../../assets/imports";
 
 export const HeroComponent = () => {
   return (

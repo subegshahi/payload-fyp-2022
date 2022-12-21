@@ -1,7 +1,6 @@
 import React from "react";
-import { Header, Footer } from "../components/imports";
+import { Header, Footer, SignUpForm } from "../components/imports";
 import { aircraft } from "../assets/imports";
-import { SignUpForm } from "../components/forms/SignUpForm";
 
 export const SignUp = () => {
   return (
