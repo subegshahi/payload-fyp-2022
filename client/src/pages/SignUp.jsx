@@ -6,12 +6,12 @@ export const SignUp = () => {
   return (
     <>
       {/* <Header /> */}
-      <section className="w-full h-screen flex">
-        <div className="hidden lg:block w-1/2">
+      <section className="flex min-h-screen w-full">
+        <div className="hidden w-1/2 lg:block">
           <img className="h-screen" src={aircraft} alt="" />
         </div>
 
-        <div className="w-full flex justify-center items-center lg:w-1/2 lg:mr-[90px]">
+        <div className="flex w-full items-center justify-center lg:mr-[90px] lg:w-1/2">
           <SignUpForm />
         </div>
       </section>

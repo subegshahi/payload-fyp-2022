@@ -6,42 +6,42 @@ import { payloadLogo } from "../../assets/imports";
 export const Header = () => {
   return (
     <header className="border-b-2 border-gray-200">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-5 h-16">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
         <div className="flex-1">
           <img className="w-20" src={payloadLogo} alt="header logo" />
         </div>
 
-        <nav className="hidden md:block space-x-10 ">
+        <nav className="hidden space-x-10 md:block ">
           <Link
-            className="text-gray-500 font-medium hover:text-gray-900"
+            className="font-medium text-gray-500 hover:text-gray-900"
             to="/"
           >
             Home
           </Link>
 
-          <Link className="text-gray-500 font-medium  hover:text-gray-900">
+          <Link className="font-medium text-gray-500  hover:text-gray-900">
             Services
           </Link>
 
-          <Link className="text-gray-500 font-medium  hover:text-gray-900">
+          <Link className="font-medium text-gray-500  hover:text-gray-900">
             Contact
           </Link>
 
-          <Link className="text-gray-500 font-medium  hover:text-gray-900">
+          <Link className="font-medium text-gray-500  hover:text-gray-900">
             About
           </Link>
         </nav>
 
-        <div className="hidden space-x-5 flex-1 md:flex justify-end items-center">
+        <div className="hidden flex-1 items-center justify-end space-x-5 md:flex">
           <Link
-            className="inline-block text-gray-500 font-medium hover:text-gray-900"
+            className="inline-block font-medium text-gray-500 hover:text-gray-900"
             to="/login"
           >
             Log in
           </Link>
 
           <Link
-            className="inline-block text-white font-medium bg-brand-500 px-4 py-2 rounded-md hover:bg-brand-400"
+            className="inline-block rounded-md bg-brand-500 px-4 py-2 font-medium text-white hover:bg-brand-400"
             to="/signup"
           >
             Sign up
@@ -49,7 +49,7 @@ export const Header = () => {
         </div>
 
         <AiOutlineMenu
-          className="inline-block md:hidden hover:text-gray-600"
+          className="inline-block hover:text-gray-600 md:hidden"
           size={"25"}
         />
       </div>

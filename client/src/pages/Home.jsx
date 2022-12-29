@@ -7,23 +7,21 @@ export const Home = () => {
     <>
       <Header />
 
-      <main>
-        <div className="bg-gradient-to-b from-[#3a96ff] to-[#2eb6ff] h-fit w-full">
-          <div className="max-w-7xl mx-auto px-5 py-5">
-            <div className="flex mt-10">
-              <HeroComponent />
-            </div>
+      <main className="bg-gradient-to-b from-[#3a96ff] to-[#2eb6ff]">
+        <div className="mx-auto h-[70vh] max-w-7xl px-5 py-5">
+          <div className="mt-10 flex">
+            <HeroComponent />
+          </div>
 
-            <div className="max-w-lg mx-auto lg:max-w-7xl mt-10 pb-10">
-              <BookingForm />
-            </div>
+          <div className="relative mt-10 w-full">
+            <BookingForm />
           </div>
         </div>
-
-        <div className="max-w-7xl mx-auto px-5">
-          <div className="h-[600px] border border-gray-300 rounded-xl mt-10" />
-        </div>
       </main>
+
+      <div className="mx-auto mt-40 max-w-7xl px-5">
+        <div className="h-[600px] rounded-xl bg-white shadow-sm" />
+      </div>
 
       <Footer />
     </>

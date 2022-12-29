@@ -4,14 +4,14 @@ import { boardingPass, document } from "../../assets/imports";
 export const HeroComponent = () => {
   return (
     <>
-      <div className="lg:w-1/2 flex justify-center items-center">
-        <p className="text-4xl font-bold text-white mt-5">
+      <div className="flex flex-col items-center justify-center lg:w-1/2">
+        <p className="mt-5 text-4xl font-bold text-white">
           Deserunt, voluptatibus quisquam esse explicabo consectetur
         </p>
       </div>
 
       <img
-        className="hidden lg:inline-block w-1/2 h-[450px]"
+        className="hidden h-[400px] w-1/2 lg:inline-block"
         src={document}
         alt=""
       />

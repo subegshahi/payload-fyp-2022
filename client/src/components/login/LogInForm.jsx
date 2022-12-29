@@ -4,62 +4,62 @@ import { plane, google } from "../../assets/imports";
 
 export const LogInForm = () => {
   return (
-    <form className="px-5 w-full lg:w-1/2">
-      <img className="w-full h-72 lg:hidden" src={plane} alt="plane image" />
+    <form className="w-full px-5 lg:w-1/2">
+      <img className="h-72 w-full lg:hidden" src={plane} alt="plane image" />
 
       <div>
-        <h1 className="font-medium text-4xl mt-10">Welcome back</h1>
-        <h2 className="text-lg mt-2 text-gray-500">
+        <h1 className="mt-10 text-4xl font-medium">Welcome back</h1>
+        <h2 className="mt-2 text-lg text-gray-500">
           Please enter your details.
         </h2>
       </div>
 
-      <div className="flex flex-col mt-10">
+      <div className="mt-10 flex flex-col">
         <label className="font-medium" htmlFor="">
           Email
         </label>
 
         <input
-          className="border border-gray-300 py-2 rounded-md mt-2 px-4 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500"
+          className="mt-2 rounded-md border border-gray-300 py-2 px-4 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
           type="email"
           placeholder="Enter email"
         />
       </div>
 
-      <div className="flex flex-col mt-5">
+      <div className="mt-5 flex flex-col">
         <label className="font-medium" htmlFor="">
           Password
         </label>
 
         <input
-          className="border border-gray-300 py-2 rounded-md mt-2 px-4 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500"
+          className="mt-2 rounded-md border border-gray-300 py-2 px-4 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
           type="Password"
           placeholder="Enter password"
         />
       </div>
 
-      <p className="mt-2 text-right text-brand-500 font-medium">
+      <p className="mt-2 text-right font-medium text-brand-500">
         Forget password
       </p>
 
       <Link
-        className="block text-white font-medium bg-brand-500 px-4 py-3 rounded-md text-center hover:bg-brand-400 mt-5"
+        className="mt-5 block rounded-md bg-brand-500 px-4 py-3 text-center font-medium text-white hover:bg-brand-400"
         to=""
       >
         Log in
       </Link>
 
       <Link
-        className="block font-medium border border-gray-300 px-4 py-2 rounded-md text-center mt-5 "
+        className="mt-5 block rounded-md border border-gray-300 px-4 py-2 text-center font-medium "
         to=""
       >
         <img className="inline-block w-8 " src={google} alt="" />
-        <span className="inline-block ml-2">Continue with Google</span>
+        <span className="ml-2 inline-block">Continue with Google</span>
       </Link>
 
-      <p className="text-gray-500 mt-5 text-center">
+      <p className="mt-5 text-center text-gray-500">
         Don't have account?
-        <Link className="text-brand-500 font-medium" to="/signup">
+        <Link className="font-medium text-brand-500" to="/signup">
           {" "}
           Sign up
         </Link>
