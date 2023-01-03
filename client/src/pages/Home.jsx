@@ -19,9 +19,9 @@ export const Home = () => {
         </div>
       </main>
 
-      <div className="mx-auto mt-40 max-w-7xl px-5">
+      <section className="mx-auto mt-40 max-w-7xl px-5">
         <div className="h-[600px] rounded-xl bg-white shadow-sm" />
-      </div>
+      </section>
 
       <Footer />
     </>
