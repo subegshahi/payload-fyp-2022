@@ -1,40 +1,60 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { AiOutlineMenu } from "react-icons/ai";
-import { payloadLogo } from "../../assets/imports";
+import {
+  payloadLogo,
+  AiOutlineMenu,
+  RiHomeFill,
+  FaPlane,
+  MdOutlinePlace,
+} from "../../assets/imports";
 
 export const Header = () => {
   return (
-    <header className="border-b-2 border-gray-200">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
-        <div className="flex-1">
-          <img className="w-20" src={payloadLogo} alt="header logo" />
+    <header>
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-5 px-5">
+        <div className="">
+          {/* <h1 className="text-2xl font-semibold text-white">Payload</h1> */}
+          {/* <img className="w-20" src={payloadLogo} alt="header logo" /> */}
         </div>
 
-        <nav className="hidden space-x-10 md:block ">
-          <Link
-            className="font-medium text-gray-500 hover:text-gray-900"
-            to="/"
-          >
-            Home
-          </Link>
+        <nav className="hidden space-x-10 md:flex ">
+          <div className="flex items-center justify-center gap-2">
+            <RiHomeFill className="inline-block text-white" size={"25"} />
 
-          <Link className="font-medium text-gray-500  hover:text-gray-900">
-            Services
-          </Link>
+            <Link
+              className="font-medium text-white hover:text-brand-300"
+              to="/"
+            >
+              Home
+            </Link>
+          </div>
 
-          <Link className="font-medium text-gray-500  hover:text-gray-900">
-            Contact
-          </Link>
+          <div className="flex items-center justify-center gap-2">
+            <FaPlane className="inline-block text-white" size={"25"} />
 
-          <Link className="font-medium text-gray-500  hover:text-gray-900">
-            About
-          </Link>
+            <Link
+              className="font-medium text-white hover:text-brand-300"
+              to="/"
+            >
+              Flight
+            </Link>
+          </div>
+
+          <div className="flex items-center justify-center gap-2">
+            <MdOutlinePlace className="inline-block text-white" size={"25"} />
+
+            <Link
+              className="font-medium text-white hover:text-brand-300"
+              to="/"
+            >
+              Destinations
+            </Link>
+          </div>
         </nav>
 
         <div className="hidden flex-1 items-center justify-end space-x-5 md:flex">
           <Link
-            className="inline-block font-medium text-gray-500 hover:text-gray-900"
+            className="inline-block font-medium text-white hover:text-brand-300"
             to="/login"
           >
             Log in
@@ -49,7 +69,7 @@ export const Header = () => {
         </div>
 
         <AiOutlineMenu
-          className="inline-block hover:text-gray-600 md:hidden"
+          className="inline-block text-white hover:text-black md:hidden"
           size={"25"}
         />
       </div>
