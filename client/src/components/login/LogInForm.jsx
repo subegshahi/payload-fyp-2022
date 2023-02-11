@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { plane, google } from "../../assets/imports";
+import { google } from "../../assets/imports";
 
 export const LogInForm = () => {
   return (
     <form className="w-full px-5 lg:w-1/2">
-      <img className="h-72 w-full lg:hidden" src={plane} alt="plane image" />
-
       <div>
         <h1 className="mt-10 text-4xl font-medium">Welcome back</h1>
         <h2 className="mt-2 text-lg text-gray-500">
@@ -39,23 +37,17 @@ export const LogInForm = () => {
       </div>
 
       <p className="mt-2 text-right font-medium text-brand-500">
-        Forget password
+        Forgot password
       </p>
 
-      <Link
-        className="mt-5 block rounded-md bg-brand-500 px-4 py-3 text-center font-medium text-white hover:bg-brand-400"
-        to=""
-      >
+      <button className="mt-5 block w-full rounded-md bg-brand-500 px-4 py-3 text-center font-medium text-white hover:bg-brand-400">
         Log in
-      </Link>
+      </button>
 
-      <Link
-        className="mt-5 block rounded-md border border-gray-300 px-4 py-2 text-center font-medium "
-        to=""
-      >
+      <button className="mt-5 block w-full rounded-md border border-gray-300 px-4 py-2 text-center font-medium ">
         <img className="inline-block w-8 " src={google} alt="" />
         <span className="ml-2 inline-block">Continue with Google</span>
-      </Link>
+      </button>
 
       <p className="mt-5 text-center text-gray-500">
         Don't have account?

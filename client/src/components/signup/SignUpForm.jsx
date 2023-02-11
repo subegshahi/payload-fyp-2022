@@ -73,20 +73,14 @@ export const SignUpForm = () => {
         />
       </div>
 
-      <Link
-        className="mt-5 block rounded-md bg-brand-500 px-4 py-3 text-center font-medium text-white hover:bg-brand-400"
-        to=""
-      >
+      <button className="mt-5 block w-full rounded-md bg-brand-500 px-4 py-3 text-center font-medium text-white hover:bg-brand-400">
         Sign up
-      </Link>
+      </button>
 
-      <Link
-        className="mt-5 block rounded-md border border-gray-300 px-4 py-2 text-center font-medium "
-        to=""
-      >
+      <button className="mt-5 block w-full rounded-md border border-gray-300 px-4 py-2 text-center font-medium">
         <img className="inline-block w-8 " src={google} alt="" />
         <span className="ml-2 inline-block">Continue with Google</span>
-      </Link>
+      </button>
 
       <p className="mt-5 text-center text-gray-500">
         Already have an account?

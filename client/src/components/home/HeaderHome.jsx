@@ -8,7 +8,7 @@ import {
   MdOutlinePlace,
 } from "../../assets/imports";
 
-export const Header = () => {
+export const HeaderHome = () => {
   return (
     <header>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-5 px-5">
@@ -32,21 +32,15 @@ export const Header = () => {
           <div className="flex items-center justify-center gap-2">
             <FaPlane className="inline-block text-white" size={"25"} />
 
-            <Link
-              className="font-medium text-white hover:text-brand-300"
-              to="/"
-            >
-              Flight
+            <Link className="font-medium text-white hover:text-brand-300" to="">
+              Airlines
             </Link>
           </div>
 
           <div className="flex items-center justify-center gap-2">
             <MdOutlinePlace className="inline-block text-white" size={"25"} />
 
-            <Link
-              className="font-medium text-white hover:text-brand-300"
-              to="/"
-            >
+            <Link className="font-medium text-white hover:text-brand-300" to="">
               Destinations
             </Link>
           </div>
@@ -68,10 +62,9 @@ export const Header = () => {
           </Link>
         </div>
 
-        <AiOutlineMenu
-          className="inline-block text-white hover:text-black md:hidden"
-          size={"25"}
-        />
+        <button className="inline-block text-white hover:text-brand-300 md:hidden">
+          <AiOutlineMenu size={"25"} />
+        </button>
       </div>
     </header>
   );

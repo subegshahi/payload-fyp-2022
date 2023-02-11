@@ -4,28 +4,30 @@ import { boardingPass, document } from "../../assets/imports";
 
 export const HeroComponent = () => {
   return (
-    <section className="flex">
-      <div className="flex flex-col justify-center lg:w-1/2">
-        <div>
-          <p className="mt-5 text-5xl font-bold text-white">
-            Deserunt, voluptatibus quisquam
-          </p>
+    <section className="flex flex-col items-center justify-center gap-10 lg:flex-row lg:gap-10">
+      <img
+        className="h-[23rem] lg:order-2 lg:h-[26rem] lg:w-1/2"
+        src={document}
+        alt=""
+      />
 
-          <p className="font-base mt-10 text-lg text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque,
-            suscipit.
-          </p>
-        </div>
+      <div>
+        <p className="mt-5 text-4xl font-bold text-white md:text-5xl">
+          Deserunt, voluptatibus quisquam
+        </p>
+
+        <p className="font-base mt-5 text-lg text-white">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque,
+          suscipit.
+        </p>
 
         <Link
-          className="mt-10 inline-block w-1/2 rounded-md bg-brand-500 px-4 py-2 text-center font-medium text-white hover:bg-brand-300"
-          to="/signup"
+          className="mt-10 inline-block w-full rounded-md bg-brand-500 px-4 py-3 text-center font-medium text-white hover:bg-brand-400 lg:w-1/2"
+          to="/booking"
         >
-          Sign up now
+          Get Started
         </Link>
       </div>
-
-      <img className="hidden h-[400px] w-1/2 lg:block" src={document} alt="" />
     </section>
   );
 };

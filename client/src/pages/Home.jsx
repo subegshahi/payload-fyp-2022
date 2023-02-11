@@ -1,31 +1,14 @@
 import React from "react";
-import { BookingForm } from "../components/home/BookingForm";
-import { Header, Footer, HeroComponent } from "../components/imports";
+import { HeaderHome, Footer, HeroComponent } from "../components/imports";
 
 export const Home = () => {
   return (
-    <>
-      {/* <Header /> */}
+    <div className="flex min-h-screen flex-col bg-gradient-to-br from-[#09203f] to-[#537895]">
+      <HeaderHome />
 
-      <main className="bg-gradient-to-br from-[#09203f] to-[#537895]">
-        <Header />
-
-        <div className="mx-auto h-[60vh] max-w-7xl px-5 py-5">
-          <div>
-            <HeroComponent />
-          </div>
-
-          <div className="mt-10">
-            <BookingForm />
-          </div>
-        </div>
+      <main className="mx-auto flex max-w-7xl flex-1  items-center justify-center px-5">
+        <HeroComponent />
       </main>
-
-      {/* <section className="mx-auto mt-10 max-w-7xl px-5">
-        <div className="h-[600px] rounded-xl bg-white shadow-sm" />
-      </section> */}
-
-      {/* <Footer /> */}
-    </>
+    </div>
   );
 };
