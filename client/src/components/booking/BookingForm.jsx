@@ -1,9 +1,32 @@
-import React, { useContext, useMemo, useState } from "react";
-import { useForm } from "react-hook-form";
+import React, { useState, useEffect } from "react";
 
 export const BookingForm = () => {
   const [adultCounter, setAdultCounter] = useState(1);
   const [childCounter, setChildCounter] = useState(0);
+
+  const increaseAdultCounter = () => {
+    setAdultCounter(adultCounter + 1);
+  };
+
+  const decreaseAdultCounter = () => {
+    if (adultCounter > 1) {
+      setAdultCounter(adultCounter - 1);
+    }
+  };
+
+  const increaseChildCounter = () => {
+    setChildCounter(childCounter + 1);
+  };
+
+  const decreaseChildCounter = () => {
+    if (childCounter > 0) {
+      setChildCounter(childCounter - 1);
+    }
+  };
+
+  useEffect(() => {
+    console.log("use effect ran");
+  }, []);
 
   return (
     <form
@@ -84,9 +107,7 @@ export const BookingForm = () => {
             <div className="flex items-center gap-2">
               <button
                 className="inline-block w-1/4 rounded-md bg-brand-100 text-lg font-bold text-brand-500"
-                onClick={() => {
-                  setAdultCounter(adultCounter + 1);
-                }}
+                onClick={increaseAdultCounter}
               >
                 +
               </button>
@@ -95,11 +116,7 @@ export const BookingForm = () => {
 
               <button
                 className="inline-block w-1/4 rounded-md bg-brand-100 text-lg font-bold text-brand-500"
-                onClick={() => {
-                  if (adultCounter > 1) {
-                    setAdultCounter(adultCounter - 1);
-                  }
-                }}
+                onClick={decreaseAdultCounter}
               >
                 -
               </button>
@@ -108,9 +125,7 @@ export const BookingForm = () => {
             <div className="flex items-center gap-2 [&>*]:basis-full">
               <button
                 className="inline-block w-1/4 rounded-md bg-brand-100 text-lg font-bold text-brand-500"
-                onClick={() => {
-                  setChildCounter(childCounter + 1);
-                }}
+                onClick={increaseChildCounter}
               >
                 +
               </button>
@@ -119,11 +134,7 @@ export const BookingForm = () => {
 
               <button
                 className="inline-block w-1/4 rounded-md bg-brand-100 text-lg font-bold text-brand-500"
-                onClick={() => {
-                  if (childCounter > 0) {
-                    setChildCounter(childCounter - 1);
-                  }
-                }}
+                onClick={decreaseChildCounter}
               >
                 -
               </button>
