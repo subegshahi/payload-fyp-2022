@@ -6,7 +6,7 @@ import {
   RiHomeFill,
   FaPlane,
   MdOutlinePlace,
-} from "../../assets/imports";
+} from "../../../assets/imports";
 
 export const HeaderHome = () => {
   return (

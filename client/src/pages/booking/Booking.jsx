@@ -1,5 +1,5 @@
 import React from "react";
-import { BookingForm, HeaderBooking } from "../components/imports";
+import { BookingForm, HeaderBooking } from "../imports";
 
 export const Booking = () => {
   return (

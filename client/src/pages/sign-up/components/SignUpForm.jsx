@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { google } from "../../assets/imports";
+import { google } from "../../../assets/imports";
 
 export const SignUpForm = () => {
   return (

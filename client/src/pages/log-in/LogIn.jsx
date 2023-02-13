@@ -1,6 +1,6 @@
 import React from "react";
-import { Footer, LogInForm } from "../components/imports";
-import { flyingAircraft, document } from "../assets/imports";
+import { Footer, LogInForm } from "../imports";
+import { flyingAircraft, document } from "../../assets/imports";
 
 export const LogIn = () => {
   return (
