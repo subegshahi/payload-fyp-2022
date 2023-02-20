@@ -6,9 +6,9 @@ import {
   RiHomeFill,
   FaPlane,
   MdOutlinePlace,
-} from "../../../assets/imports";
+} from "../../assets/imports";
 
-export const HeaderHome = () => {
+export const Header = () => {
   return (
     <header>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-5 px-5">
@@ -59,6 +59,13 @@ export const HeaderHome = () => {
             to="/signup"
           >
             Sign up
+          </Link>
+
+          <Link
+            className="inline-block rounded-md bg-red-500 px-4 py-2 font-medium text-white hover:bg-red-600"
+            to="/"
+          >
+            Log out
           </Link>
         </div>
 

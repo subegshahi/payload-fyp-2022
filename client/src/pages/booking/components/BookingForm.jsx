@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const BookingForm = () => {
   const [adultCounter, setAdultCounter] = useState(1);
@@ -9,9 +10,7 @@ export const BookingForm = () => {
   };
 
   const decreaseAdultCounter = () => {
-    if (adultCounter > 1) {
-      setAdultCounter(adultCounter - 1);
-    }
+    adultCounter > 1 && setAdultCounter(adultCounter - 1);
   };
 
   const increaseChildCounter = () => {
@@ -19,14 +18,8 @@ export const BookingForm = () => {
   };
 
   const decreaseChildCounter = () => {
-    if (childCounter > 0) {
-      setChildCounter(childCounter - 1);
-    }
+    childCounter > 0 && setChildCounter(childCounter - 1);
   };
-
-  useEffect(() => {
-    console.log("use effect ran");
-  }, []);
 
   return (
     <form
@@ -142,7 +135,10 @@ export const BookingForm = () => {
           </div>
         </div>
 
-        <button className="btn-form">Search Flight</button>
+        {/* <button className="btn-form">Search Flight</button> */}
+        <Link className="btn-form" to="/searchresult">
+          Search
+        </Link>
       </div>
     </form>
   );
