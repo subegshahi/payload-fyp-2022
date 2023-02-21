@@ -4,7 +4,7 @@ import { RiEmotionSadLine } from "react-icons/ri";
 
 export const Error = () => {
   return (
-    <section className="mx-auto flex min-h-screen max-w-7xl items-center justify-center p-5">
+    <main className="mx-auto flex min-h-screen max-w-7xl items-center justify-center p-5">
       <div>
         <div className="-ml-5">
           <RiEmotionSadLine size={200} />
@@ -25,6 +25,6 @@ export const Error = () => {
           </Link>
         </div>
       </div>
-    </section>
+    </main>
   );
 };

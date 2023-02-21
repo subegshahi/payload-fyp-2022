@@ -8,6 +8,7 @@ import {
   Admin,
   Booking,
   SearchResult,
+  Checkout,
   ContractorHome,
 } from "./pages/imports";
 
@@ -20,6 +21,7 @@ export const App = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/searchresult" element={<SearchResult />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/contractorhome" element={<ContractorHome />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<Error />} />

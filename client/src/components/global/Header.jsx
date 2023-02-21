@@ -11,12 +11,7 @@ import {
 export const Header = () => {
   return (
     <header>
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-5 px-5">
-        <div className="">
-          {/* <h1 className="text-2xl font-semibold text-white">Payload</h1> */}
-          {/* <img className="w-20" src={payloadLogo} alt="header logo" /> */}
-        </div>
-
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-end gap-5 px-5">
         <nav className="hidden space-x-10 md:flex ">
           <div className="flex items-center justify-center gap-2">
             <RiHomeFill className="inline-block text-white" size={"25"} />
@@ -61,12 +56,9 @@ export const Header = () => {
             Sign up
           </Link>
 
-          <Link
-            className="inline-block rounded-md bg-red-500 px-4 py-2 font-medium text-white hover:bg-red-600"
-            to="/"
-          >
+          {/* <button className="inline-block rounded-md bg-red-500 px-4 py-2 font-medium text-white hover:bg-red-600">
             Log out
-          </Link>
+          </button> */}
         </div>
 
         <button className="inline-block text-white hover:text-brand-300 md:hidden">
