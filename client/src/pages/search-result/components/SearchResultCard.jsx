@@ -44,9 +44,9 @@ export const SearchResultCard = () => {
             Fare: 15,000
           </div>
 
-          <button className="btn-form lg:w-1/4">
-            <Link to="/checkout">Book Ticket</Link>
-          </button>
+          <Link className="btn-form lg:w-1/4" to="/checkout">
+            Book Ticket
+          </Link>
         </div>
       </div>
     </div>

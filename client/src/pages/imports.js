@@ -19,3 +19,5 @@ export { HeroComponent } from "./home/components/HeroComponent";
 export { SearchResultHeader } from "./search-result/components/SearchResultHeader";
 export { SearchResultFilter } from "./search-result/components/SearchResultFilter";
 export { SearchResultCard } from "./search-result/components/SearchResultCard";
+export { CheckoutForm } from "./checkout/components/CheckoutForm";
+export { Ticket } from "./checkout/components/Ticket";
