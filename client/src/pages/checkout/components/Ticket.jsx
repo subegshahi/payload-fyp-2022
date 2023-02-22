@@ -8,7 +8,7 @@ import {
 
 export const Ticket = () => {
   return (
-    <div className="divide-y-2 divide-dashed divide-gray-400 rounded-xl bg-white p-10 shadow-sm">
+    <div className="divide-y-2 divide-dashed divide-gray-400 rounded-xl border bg-white p-10 shadow-sm">
       <div>
         <div className="flex items-center justify-between">
           <div className="flex gap-2">

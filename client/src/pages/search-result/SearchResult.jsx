@@ -19,9 +19,9 @@ export const SearchResult = () => {
 
       <main className="mx-auto mt-10 w-full max-w-7xl px-5">
         <div className="flex gap-5">
-          {/* <div className="w-1/3">
+          <div className="mt-5 hidden w-1/3 lg:block">
             <SearchResultFilter />
-          </div> */}
+          </div>
 
           <div className="w-full">
             <div className="mt-5">

@@ -4,7 +4,7 @@ import { FaPlane } from "../../../assets/imports";
 
 export const SearchResultCard = () => {
   return (
-    <div className="rounded-md bg-white p-5 shadow-sm">
+    <div className="rounded-xl border bg-white p-5 shadow-sm">
       <div className="flex items-center gap-2">
         <FaPlane className="text-3xl" />
         <h1 className="text-lg font-medium">Summit Air</h1>
@@ -13,7 +13,7 @@ export const SearchResultCard = () => {
       <div className="divide-y-2 divide-dashed divide-gray-400">
         <div className="mt-5 flex items-center justify-between">
           <div>
-            <div className="text-lg">07:00 AM </div>
+            <div className="text-lg font-semibold ">07:00 AM </div>
             <div className="text-lg text-gray-400">Nepalgunj</div>
           </div>
 
@@ -22,9 +22,9 @@ export const SearchResultCard = () => {
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            strokeWidth={1}
+            strokeWidth={0.6}
             stroke="currentColor"
-            className="h-10 w-10 text-gray-400"
+            className="h-24 w-24 text-gray-400"
           >
             <path
               strokeLinecap="round"
@@ -34,7 +34,7 @@ export const SearchResultCard = () => {
           </svg>
 
           <div>
-            <div className="text-lg">07:45 AM </div>
+            <div className="text-lg font-semibold">07:45 AM </div>
             <div className="text-lg text-gray-400">Rara</div>
           </div>
         </div>
