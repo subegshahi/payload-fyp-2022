@@ -79,6 +79,8 @@ export const SearchResultFilter = () => {
           </label>
         </div>
       </div>
+
+      <button className="btn-form mt-5">Search</button>
     </div>
   );
 };

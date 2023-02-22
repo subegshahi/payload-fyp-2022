@@ -1,31 +1,35 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { AdultChildCounter } from "./AdultChildCounter";
 
 export const BookingForm = () => {
-  const [adultCounter, setAdultCounter] = useState(1);
-  const [childCounter, setChildCounter] = useState(0);
+  const schema = yup.object().shape({
+    from: yup.string().required(),
+    to: yup.string().required(),
+    departureDate: yup.date().required(),
+    // returnDate: yup.date(),
+    adult: yup.number().min(1).required(),
+    child: yup.number().min(0),
+  });
 
-  const increaseAdultCounter = () => {
-    setAdultCounter(adultCounter + 1);
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
-  const decreaseAdultCounter = () => {
-    adultCounter > 1 && setAdultCounter(adultCounter - 1);
-  };
-
-  const increaseChildCounter = () => {
-    setChildCounter(childCounter + 1);
-  };
-
-  const decreaseChildCounter = () => {
-    childCounter > 0 && setChildCounter(childCounter - 1);
+  const onSubmit = (data) => {
+    console.log(data);
   };
 
   return (
     <form
-      onSubmit={(e) => {
-        e.preventDefault();
-      }}
+      onSubmit={handleSubmit(onSubmit)}
       className="w-full rounded-md bg-white p-5 shadow-sm"
     >
       {/* <div className="flex gap-10">
@@ -53,7 +57,10 @@ export const BookingForm = () => {
               placeholder="Nepalgunj (KEP)"
               name=""
               id=""
+              {...register("from")}
             />
+
+            <p className="text-red-600">{errors.from?.message}</p>
           </div>
 
           <div className="mt-5 flex flex-col">
@@ -67,78 +74,97 @@ export const BookingForm = () => {
               placeholder="RARA (RARA)"
               name=""
               id=""
+              {...register("to")}
             />
+
+            <p className="text-red-600">{errors.to?.message}</p>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 gap-5">
           <div className="mt-5 flex flex-col">
             <label className="text-base font-medium text-gray-600" htmlFor="">
-              Departure
+              Departure Date
             </label>
 
-            <input className="input-form" type="date" name="" id="" />
+            <input
+              className="input-form"
+              type="date"
+              name=""
+              id=""
+              {...register("departureDate")}
+            />
+
+            <p className="text-red-600">{errors.departureDate?.message}</p>
           </div>
 
-          <div className="mt-5 flex flex-col">
+          {/* <div className="mt-5 flex flex-col">
             <label className="text-base font-medium text-gray-600" htmlFor="">
-              Return
+              Return Date
             </label>
 
-            <input className="input-form" type="date" name="" id="" />
-          </div>
+            <input
+              className="input-form"
+              type="date"
+              name=""
+              id=""
+              {...register("returnDate")}
+            />
+          </div> */}
         </div>
       </div>
 
       <div className="items-center justify-center gap-5 lg:flex [&>*]:basis-full">
-        <div className="mt-5 lg:w-1/2">
-          <label className="text-base font-medium text-gray-600 " htmlFor="">
-            Travellers
-          </label>
+        <div className="gap-5 lg:flex [&>*]:basis-full">
+          <div className="mt-5 flex flex-col">
+            <label className="text-base font-medium text-gray-600" htmlFor="">
+              Adult
+            </label>
 
-          <div className="mt-2 grid grid-cols-2 gap-5">
-            <div className="flex items-center gap-2">
-              <button
-                className="inline-block w-1/4 rounded-md bg-brand-100 text-lg font-bold text-brand-500"
-                onClick={increaseAdultCounter}
-              >
-                +
-              </button>
+            <input
+              className="input-form"
+              type="number"
+              placeholder="1"
+              name=""
+              id=""
+              min="1"
+              defaultValue="1"
+              {...register("adult")}
+            />
 
-              <p className="text-center text-gray-600">{adultCounter} Adults</p>
+            <p className="text-red-600">{errors.adult?.message}</p>
+          </div>
 
-              <button
-                className="inline-block w-1/4 rounded-md bg-brand-100 text-lg font-bold text-brand-500"
-                onClick={decreaseAdultCounter}
-              >
-                -
-              </button>
-            </div>
+          <div className="mt-5 flex flex-col">
+            <label className="text-base font-medium text-gray-600" htmlFor="">
+              Child
+            </label>
 
-            <div className="flex items-center gap-2 [&>*]:basis-full">
-              <button
-                className="inline-block w-1/4 rounded-md bg-brand-100 text-lg font-bold text-brand-500"
-                onClick={increaseChildCounter}
-              >
-                +
-              </button>
+            <input
+              className="input-form"
+              type="number"
+              placeholder="0"
+              name=""
+              id=""
+              min="0"
+              defaultValue="0"
+              {...register("child")}
+            />
 
-              <p className=" text-center text-gray-600">{childCounter} Child</p>
-
-              <button
-                className="inline-block w-1/4 rounded-md bg-brand-100 text-lg font-bold text-brand-500"
-                onClick={decreaseChildCounter}
-              >
-                -
-              </button>
-            </div>
+            <p className="text-red-600">{errors.child?.message}</p>
           </div>
         </div>
 
-        {/* <button className="btn-form">Search Flight</button> */}
-        <Link className="btn-form" to="/searchresult">
-          Search
-        </Link>
+        {/* Child and Adult Counter */}
+        {/* <AdultChildCounter /> */}
+
+        <div className="flex gap-5">
+          <button className="btn-form mt-5 lg:mt-12">Search Flight</button>
+
+          <Link className="btn-form mt-5 lg:mt-12" to="/searchresult">
+            Search Result Page
+          </Link>
+        </div>
       </div>
     </form>
   );

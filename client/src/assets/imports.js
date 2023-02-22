@@ -10,11 +10,13 @@ export { default as filter } from "./images/icons8-filter.svg";
 export { default as calendar } from "./images/icons8-calendar.svg";
 export { default as clock } from "./images/icons8-watch.svg";
 export { default as downloadPDF } from "./images/icons8-export-pdf.svg";
+export { default as user } from "./images/user.svg";
 
 //React Icons
 export { AiOutlineMenu } from "react-icons/ai";
 export { RiHomeFill } from "react-icons/ri";
 export { FaPlane } from "react-icons/fa";
 export { MdOutlinePlace } from "react-icons/md";
+export { BiUser } from "react-icons/bi";
 // export { HiOutlineTicket } from "react-icons/hi";
 // export { IoAirplaneSharp } from "react-icons/io";

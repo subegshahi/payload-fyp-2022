@@ -6,6 +6,7 @@ import {
   RiHomeFill,
   FaPlane,
   MdOutlinePlace,
+  BiUser,
 } from "../../assets/imports";
 
 export const Header = () => {
@@ -32,16 +33,35 @@ export const Header = () => {
             </Link>
           </div>
 
-          <div className="flex items-center justify-center gap-2">
+          {/* <div className="flex items-center justify-center gap-2">
             <MdOutlinePlace className="inline-block text-white" size={"25"} />
 
             <Link className="font-medium text-white hover:text-brand-300" to="">
               Destinations
             </Link>
+          </div> */}
+
+          <div className="flex items-center justify-center gap-2">
+            <BiUser className="inline-block text-white" size={"25"} />
+
+            <Link
+              className="font-medium text-white hover:text-brand-300"
+              to="/contractorhome"
+            >
+              Contractor
+            </Link>
           </div>
         </nav>
 
         <div className="hidden flex-1 items-center justify-end space-x-5 md:flex">
+          {/* <div className="flex items-center justify-center gap-2">
+            <BiUser className="inline-block text-white" size={"25"} />
+
+            <Link className="font-medium text-white hover:text-brand-300" to="">
+              My Account
+            </Link>
+          </div> */}
+
           <Link
             className="inline-block font-medium text-white hover:text-brand-300"
             to="/login"

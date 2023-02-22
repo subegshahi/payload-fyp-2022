@@ -8,7 +8,7 @@ import { google } from "../../../assets/imports";
 export const LogInForm = () => {
   const schema = yup.object().shape({
     email: yup.string().email().required(),
-    password: yup.string().required(),
+    password: yup.string().min(4).required(),
   });
 
   const {

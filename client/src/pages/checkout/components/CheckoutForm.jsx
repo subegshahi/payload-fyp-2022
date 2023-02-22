@@ -1,6 +1,26 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 export const CheckoutForm = () => {
+  const schema = yup.object().shape({
+    khaltiId: yup.string().required(),
+    voucherCode: yup.string(),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
     <>
       <h1 className="text-3xl font-semibold">Checkout, make payment</h1>
@@ -10,20 +30,32 @@ export const CheckoutForm = () => {
         Khalti Wallet
       </h2>
 
-      <form className="mt-10" action="">
+      <form className="mt-10" onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label className="text-lg font-light text-gray-500">Khalti ID</label>
-          <input className="input-form w-full" type="number" />
+
+          <input
+            className="input-form w-full"
+            type="number"
+            {...register("khaltiId")}
+          />
+
+          <p className="text-red-600">{errors.khaltiId?.message}</p>
         </div>
 
         <div className="mt-2">
           <label className="text-lg font-light text-gray-500">
             Voucher Code
           </label>
-          <input className="input-form w-full" type="text" />
+
+          <input
+            className="input-form w-full"
+            type="text"
+            {...register("voucherCode")}
+          />
         </div>
 
-        <button className="btn-form">Pay Now</button>
+        <button className="btn-form mt-5">Pay Now</button>
       </form>
     </>
   );

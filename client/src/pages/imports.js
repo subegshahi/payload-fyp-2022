@@ -15,6 +15,7 @@ export { Footer } from "../components/global/Footer";
 export { LogInForm } from "./log-in/components/LogInForm";
 export { SignUpForm } from "./sign-up/components/SignUpForm";
 export { BookingForm } from "./booking/components/BookingForm";
+export { AdultChildCounter } from "./booking/components/AdultChildCounter";
 export { HeroComponent } from "./home/components/HeroComponent";
 export { SearchResultHeader } from "./search-result/components/SearchResultHeader";
 export { SearchResultFilter } from "./search-result/components/SearchResultFilter";
