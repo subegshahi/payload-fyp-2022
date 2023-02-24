@@ -19,10 +19,8 @@ export const SearchResultFilter = () => {
           </div>
 
           <input
-            className="mt-2 h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-300  "
+            className="mt-2 h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 accent-brand-500 "
             type="range"
-            name=""
-            id=""
           />
         </div>
       </div>
@@ -39,7 +37,7 @@ export const SearchResultFilter = () => {
 
           <label
             htmlFor="bordered-checkbox-1"
-            className="ml-2 w-full py-4 text-sm font-medium text-gray-900 "
+            className="ml-2 w-full py-4 text-sm font-medium text-gray-900"
           >
             Summit Air
           </label>

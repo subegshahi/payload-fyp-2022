@@ -22,3 +22,4 @@ export { SearchResultFilter } from "./search-result/components/SearchResultFilte
 export { SearchResultCard } from "./search-result/components/SearchResultCard";
 export { CheckoutForm } from "./checkout/components/CheckoutForm";
 export { Ticket } from "./checkout/components/Ticket";
+export { ContractorForm } from "./contractor-home/components/ContractorForm";
