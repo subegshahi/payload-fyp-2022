@@ -1,5 +1,5 @@
 import React from "react";
-import { filter } from "../../../assets/imports";
+import { filter } from "../../../imports/assets";
 
 export const SearchResultFilter = () => {
   return (

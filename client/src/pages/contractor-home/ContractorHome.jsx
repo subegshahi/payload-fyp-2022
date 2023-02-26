@@ -1,5 +1,5 @@
 import React from "react";
-import { ContractorForm, Header } from "../imports";
+import { ContractorForm, Header } from "../../imports/components";
 
 export const ContractorHome = () => {
   return (

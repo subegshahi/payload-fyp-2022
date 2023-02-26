@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, HeroComponent } from "../imports";
+import { Header, HeroComponent } from "../../imports/components";
 
 export const Home = () => {
   return (

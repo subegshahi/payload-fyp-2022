@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, CheckoutForm, Ticket } from "../imports";
+import { Header, CheckoutForm, Ticket } from "../../imports/components";
 
 export const Checkout = () => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaPlane } from "../../../assets/imports";
+import { FaPlane } from "../../../imports/assets";
 
 export const SearchResultHeader = () => {
   return (

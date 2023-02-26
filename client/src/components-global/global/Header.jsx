@@ -7,7 +7,7 @@ import {
   FaPlane,
   MdOutlinePlace,
   BiUser,
-} from "../../assets/imports";
+} from "../../imports/assets";
 
 export const Header = () => {
   return (

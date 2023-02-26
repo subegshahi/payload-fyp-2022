@@ -4,7 +4,7 @@ import {
   calendar,
   clock,
   downloadPDF,
-} from "../../../assets/imports";
+} from "../../../imports/assets";
 
 export const Ticket = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaPlane } from "../../../assets/imports";
+import { FaPlane } from "../../../imports/assets";
 
 export const SearchResultCard = () => {
   return (

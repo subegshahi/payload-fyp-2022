@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { boardingPass, document } from "../../../assets/imports";
+import { boardingPass, document } from "../../../imports/assets";
 
 export const HeroComponent = () => {
   return (

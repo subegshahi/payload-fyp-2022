@@ -4,7 +4,7 @@ import {
   SearchResultFilter,
   SearchResultCard,
   SearchResultHeader,
-} from "../imports";
+} from "../../imports/components";
 
 export const SearchResult = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import { SignUpForm } from "../imports";
-import { aircraft } from "../../assets/imports";
+import { SignUpForm } from "../../imports/components";
+import { aircraft } from "../../imports/assets";
 
 export const SignUp = () => {
   return (

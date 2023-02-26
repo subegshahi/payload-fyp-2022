@@ -10,7 +10,7 @@ import {
   SearchResult,
   Checkout,
   ContractorHome,
-} from "./pages/imports";
+} from "./imports/components";
 
 export const App = () => {
   return (
