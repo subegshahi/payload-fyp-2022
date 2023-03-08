@@ -23,7 +23,7 @@ export const HeroComponent = () => {
 
         <Link
           className="mt-10 inline-block w-full rounded-md bg-brand-500 px-4 py-3 text-center font-medium text-white hover:bg-brand-400 lg:w-1/2"
-          to="/booking"
+          to="/login"
         >
           Get Started
         </Link>

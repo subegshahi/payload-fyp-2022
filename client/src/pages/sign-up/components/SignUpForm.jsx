@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import axios from "axios";
 import { google } from "../../../imports/assets";
 
 export const SignUpForm = () => {
   const schema = yup.object().shape({
     firstName: yup.string().required(),
     lastName: yup.string().required(),
-    email: yup.string().email().required(),
+    username: yup.string().required(),
     password: yup.string().min(4).required(),
     confirmPassword: yup
       .string()
@@ -25,8 +26,19 @@ export const SignUpForm = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  // const onSubmit = (data) => {
+  //   console.log(data);
+  // };
+
+  const onSubmit = async (formData, event) => {
+    event.preventDefault();
+
+    try {
+      await axios.post("http://localhost:4000/auth/register", formData);
+      alert("Account registered successfully");
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
@@ -71,17 +83,17 @@ export const SignUpForm = () => {
 
       <div className="mt-5 flex flex-col">
         <label className="font-medium" htmlFor="">
-          Email
+          Username
         </label>
 
         <input
           className="mt-2 rounded-md border border-gray-300 py-2 px-4 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
-          type="email"
-          placeholder="Enter email"
-          {...register("email")}
+          type="text"
+          placeholder="Enter username"
+          {...register("username")}
         />
 
-        <p className="text-red-600">{errors.email?.message}</p>
+        <p className="text-red-600">{errors.username?.message}</p>
       </div>
 
       <div className="mt-5 flex flex-col">

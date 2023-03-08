@@ -3,11 +3,18 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { google } from "../../../imports/assets";
 
 export const LogInForm = () => {
+  const [_, setCookies] = useCookies(["access_token"]);
+
+  const navigate = useNavigate();
+
   const schema = yup.object().shape({
-    email: yup.string().email().required(),
+    username: yup.string().required(),
     password: yup.string().min(4).required(),
   });
 
@@ -19,8 +26,30 @@ export const LogInForm = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  // const onSubmit = (data) => {
+  //   console.log(data);
+  // };
+
+  const onSubmit = async (formData, event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "http://localhost:4000/auth/login",
+        formData
+      );
+
+      setCookies("access_token", response.data.accessToken);
+
+      window.localStorage.setItem(
+        "userID",
+        JSON.stringify(response.data.userID)
+      );
+
+      navigate("/booking");
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
@@ -34,16 +63,16 @@ export const LogInForm = () => {
       </div>
 
       <div className="mt-10 flex flex-col">
-        <label className="font-medium">Email</label>
+        <label className="font-medium">Username</label>
 
         <input
           className="mt-2 rounded-md border border-gray-300 py-2 px-4 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
-          type="email"
-          placeholder="Enter email"
-          {...register("email")}
+          type="text"
+          placeholder="Enter username"
+          {...register("username")}
         />
 
-        <p className="text-red-600">{errors.email?.message}</p>
+        <p className="text-red-600">{errors.username?.message}</p>
       </div>
 
       <div className="mt-5 flex flex-col">
