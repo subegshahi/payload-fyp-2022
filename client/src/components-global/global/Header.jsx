@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 import {
   payloadLogo,
   AiOutlineMenu,
@@ -10,6 +11,15 @@ import {
 } from "../../imports/assets";
 
 export const Header = () => {
+  const [cookies, setCookies] = useCookies(["access_token"]);
+  const navigate = useNavigate();
+
+  const logout = () => {
+    setCookies("access_token", "", { path: "/" });
+    window.localStorage.removeItem("userID");
+    navigate("/");
+  };
+
   return (
     <header>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-end gap-5 px-5">
@@ -62,23 +72,30 @@ export const Header = () => {
             </Link>
           </div> */}
 
-          <Link
-            className="inline-block font-medium text-white hover:text-brand-300"
-            to="/login"
-          >
-            Log in
-          </Link>
+          {!cookies.access_token ? (
+            <>
+              <Link
+                className="inline-block font-medium text-white hover:text-brand-300"
+                to="/login"
+              >
+                Log in
+              </Link>
 
-          <Link
-            className="inline-block rounded-md bg-brand-500 px-4 py-2 font-medium text-white hover:bg-brand-400"
-            to="/signup"
-          >
-            Sign up
-          </Link>
-
-          {/* <button className="inline-block rounded-md bg-red-500 px-4 py-2 font-medium text-white hover:bg-red-600">
-            Log out
-          </button> */}
+              <Link
+                className="inline-block rounded-md bg-brand-500 px-4 py-2 font-medium text-white hover:bg-brand-400"
+                to="/signup"
+              >
+                Sign up
+              </Link>
+            </>
+          ) : (
+            <button
+              className="inline-block rounded-md bg-red-500 px-4 py-2 font-medium text-white hover:bg-red-600"
+              onClick={logout}
+            >
+              Log out
+            </button>
+          )}
         </div>
 
         <button className="inline-block text-white hover:text-brand-300 md:hidden">
