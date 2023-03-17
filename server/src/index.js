@@ -1,23 +1,22 @@
 import express from "express";
-import "dotenv/config";
-import cors from "cors";
-import mongoose from "mongoose";
-import { userRouter } from "./routes/users.js";
+import { PrismaClient } from "@prisma/client";
 
 const app = express();
+const prisma = new PrismaClient();
 
-app.use(express.json());
-app.use(cors());
-app.use("/auth", userRouter);
+const main = async () => {
+  const user = await prisma.user.create({
+    data: {
+      firstName: "Alice",
+      lastName: "Smith",
+      username: "alice",
+      password: "alice123",
+      isContractor: false,
+      isAdmin: false,
+    },
+  });
 
-mongoose.connect(process.env.DB_CONNECTION);
+  console.log(user);
+};
 
-// Listen for requests
-app.listen(process.env.PORT, () => {
-  console.log("Server is running on port 4000!");
-});
-
-// Routes
-app.get("/", (req, res) => {
-  res.json({ message: "Hello World!" });
-});
+main();
