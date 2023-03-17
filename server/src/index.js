@@ -1,22 +1,15 @@
 import express from "express";
-import { PrismaClient } from "@prisma/client";
+import "dotenv/config";
+import cors from "cors";
+import { userRouter } from "./routes/users.js";
 
 const app = express();
-const prisma = new PrismaClient();
 
-const main = async () => {
-  const user = await prisma.user.create({
-    data: {
-      firstName: "Alice",
-      lastName: "Smith",
-      username: "alice",
-      password: "alice123",
-      isContractor: false,
-      isAdmin: false,
-    },
-  });
+app.use(express.json());
+app.use(cors());
+app.use("/auth", userRouter);
 
-  console.log(user);
-};
-
-main();
+// Listening for request
+app.listen(process.env.PORT, () => {
+  console.log("Server is running on port 4000!");
+});
