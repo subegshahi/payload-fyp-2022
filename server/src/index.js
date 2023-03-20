@@ -1,7 +1,8 @@
 import express from "express";
 import "dotenv/config";
 import cors from "cors";
-import { userRouter } from "./routes/users.js";
+import { usersRouter } from "./routes/users.js";
+import { bookingsRouter } from "./routes/bookings.js";
 import { prisma } from "../prisma/prisma-client.js";
 
 const app = express();
@@ -9,17 +10,16 @@ const app = express();
 // Middlewares
 app.use(express.json());
 app.use(cors());
-app.use("/auth", userRouter);
+app.use("/auth", usersRouter);
+app.use("/user", bookingsRouter);
 
 // Prisma main function for testing db
-const main = async () => {
-  const user = await prisma.user.findMany();
-  const contractor = await prisma.contractor.findMany();
+// const main = async () => {
+//   const user = await prisma.user.findMany();
+//   console.log({ user });
+// };
 
-  console.log({ contractor });
-};
-
-main();
+// main();
 
 // Listening for request
 app.listen(process.env.PORT, () => {

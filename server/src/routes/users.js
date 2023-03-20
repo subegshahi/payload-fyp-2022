@@ -1,12 +1,14 @@
 import express from "express";
+import { prisma } from "../../prisma/prisma-client.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import { prisma } from "../../prisma/prisma-client.js";
 
 const router = express.Router();
 
 router.post("/register", async (req, res) => {
-  const { username, password } = req.body;
+  // console.log("Register endpoint called");
+
+  const { firstName, lastName, username, password, isContractor, isAdmin } = req.body;
   const user = await prisma.user.findUnique({ where: { username } });
 
   if (user) {
@@ -17,8 +19,12 @@ router.post("/register", async (req, res) => {
 
   const newUser = await prisma.user.create({
     data: {
+      firstName,
+      lastName,
       username,
       password: hashedPassword,
+      isContractor,
+      isAdmin,
     },
   });
 
@@ -40,7 +46,8 @@ router.post("/login", async (req, res) => {
   }
 
   const token = jwt.sign({ id: user.id }, process.env.SECRET_KEY);
+
   res.json({ token, userID: user.id });
 });
 
-export { router as userRouter };
+export { router as usersRouter };
