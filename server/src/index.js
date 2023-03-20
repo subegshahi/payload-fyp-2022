@@ -14,12 +14,12 @@ app.use("/auth", usersRouter);
 app.use("/user", bookingsRouter);
 
 // Prisma main function for testing db
-// const main = async () => {
-//   const user = await prisma.user.findMany();
-//   console.log({ user });
-// };
+const main = async () => {
+  const booking = await prisma.booking.findMany();
+  console.log({ booking });
+};
 
-// main();
+main();
 
 // Listening for request
 app.listen(process.env.PORT, () => {
