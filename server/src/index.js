@@ -6,7 +6,7 @@ import { prisma } from "../prisma/prisma-client.js";
 
 const app = express();
 
-// Middlewears
+// Middlewares
 app.use(express.json());
 app.use(cors());
 app.use("/auth", userRouter);
