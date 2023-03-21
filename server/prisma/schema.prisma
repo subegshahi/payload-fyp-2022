@@ -18,22 +18,22 @@ model User {
 }
 
 model Booking {
-  id                   String   @id @default(auto()) @map("_id") @db.ObjectId
+  id                   String @id @default(auto()) @map("_id") @db.ObjectId
   from                 String
   to                   String
-  departureDate        DateTime
+  departureDate        String
   adultPassengerNumber String
   childPassengerNumber String
 }
 
 model Ticket {
-  id                 String   @id @default(auto()) @map("_id") @db.ObjectId
+  id                 String @id @default(auto()) @map("_id") @db.ObjectId
   airlines           String
   from               String
   to                 String
-  takeOffTime        DateTime
-  landingTime        DateTime
-  flightDuration     Int
+  takeOffTime        String
+  landingTime        String
+  flightDuration     String
   totalPassengerSeat Int
   fare               Int
 }
