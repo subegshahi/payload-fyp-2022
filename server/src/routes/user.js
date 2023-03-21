@@ -50,4 +50,4 @@ router.post("/login", async (req, res) => {
   res.json({ token, userID: user.id });
 });
 
-export { router as usersRouter };
+export { router as userRouter };
