@@ -8,6 +8,7 @@ import { google } from "../../../imports/assets";
 
 export const SignUpForm = () => {
   const schema = yup.object().shape({
+    isContractor: yup.boolean(),
     firstName: yup.string().required(),
     lastName: yup.string().required(),
     username: yup.string().required(),
@@ -34,7 +35,7 @@ export const SignUpForm = () => {
     event.preventDefault();
 
     try {
-      await axios.post("http://localhost:4000/auth/register", formData);
+      await axios.post("http://localhost:4000/api/register", formData);
       alert("Account registered successfully");
     } catch (err) {
       console.error(err);
@@ -42,43 +43,59 @@ export const SignUpForm = () => {
   };
 
   return (
-    <form className="w-full px-5 lg:w-1/2" onSubmit={handleSubmit(onSubmit)}>
+    <form className="mb-10 w-full px-5 lg:w-1/2" onSubmit={handleSubmit(onSubmit)}>
       <div>
         <h1 className="mt-10 text-4xl font-medium">Create your account</h1>
-
-        <h2 className="mt-2 text-lg text-gray-500">
-          Enter the fields below to get started.
-        </h2>
+        <h2 className="mt-2 text-lg text-gray-500">Enter the fields below to get started.</h2>
       </div>
 
-      <div className="mt-10 flex flex-col">
-        <label className="font-medium" htmlFor="">
-          First Name
+      <div className="mt-10 flex flex-col gap-5 md:flex-row">
+        <label htmlFor="contractorToggle" className="relative block h-7 w-12 cursor-pointer">
+          <input
+            className="peer sr-only"
+            type="checkbox"
+            id="contractorToggle"
+            {...register("isContractor")}
+          />
+
+          <span className="absolute inset-0 rounded-full bg-gray-300 transition peer-checked:bg-green-500"></span>
+
+          <span className="absolute inset-0 m-1 h-5 w-5 rounded-full bg-white transition peer-checked:translate-x-5"></span>
         </label>
 
-        <input
-          className="mt-2 rounded-md border border-gray-300 py-2 px-4 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
-          type="text"
-          placeholder="Enter first name"
-          {...register("firstName")}
-        />
-
-        <p className="text-red-600">{errors.firstName?.message}</p>
+        <div className="font-semibold text-gray-600">Register as contractor</div>
       </div>
 
-      <div className="mt-5 flex flex-col">
-        <label className="font-medium" htmlFor="">
-          Last Name
-        </label>
+      <div className="mt-5">
+        <div className="flex flex-col">
+          <label className="font-medium" htmlFor="">
+            First Name
+          </label>
 
-        <input
-          className="mt-2 rounded-md border border-gray-300 py-2 px-4 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
-          type="text"
-          placeholder="Enter last name"
-          {...register("lastName")}
-        />
+          <input
+            className="mt-2 rounded-md border border-gray-300 py-2 px-4 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+            type="text"
+            placeholder="Enter first name"
+            {...register("firstName")}
+          />
 
-        <p className="text-red-600">{errors.lastName?.message}</p>
+          <p className="text-red-600">{errors.firstName?.message}</p>
+        </div>
+
+        <div className="mt-5 flex flex-col">
+          <label className="font-medium" htmlFor="">
+            Last Name
+          </label>
+
+          <input
+            className="mt-2 rounded-md border border-gray-300 py-2 px-4 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+            type="text"
+            placeholder="Enter last name"
+            {...register("lastName")}
+          />
+
+          <p className="text-red-600">{errors.lastName?.message}</p>
+        </div>
       </div>
 
       <div className="mt-5 flex flex-col">

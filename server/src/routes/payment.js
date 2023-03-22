@@ -3,11 +3,11 @@ import { prisma } from "../../prisma/prisma-client.js";
 
 const router = express.Router();
 
-router.post("/", async (req, res) => {
+router.post("/payment", async (req, res) => {
   res.json({ message: "payment endpoint called" });
 });
 
-router.get("/", async (req, res) => {
+router.get("/payment", async (req, res) => {
   res.json({ message: "payment endpoint called" });
 });
 

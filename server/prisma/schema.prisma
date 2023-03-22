@@ -15,6 +15,7 @@ model User {
   password     String
   isContractor Boolean @default(false)
   isAdmin      Boolean @default(false)
+  isRegistered Boolean @default(false)
 }
 
 model Booking {

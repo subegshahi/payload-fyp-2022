@@ -34,21 +34,16 @@ export const LogInForm = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:4000/auth/login",
-        formData
-      );
+      const response = await axios.post("http://localhost:4000/api/login", formData);
 
       setCookies("access_token", response.data.accessToken);
 
-      window.localStorage.setItem(
-        "userID",
-        JSON.stringify(response.data.userID)
-      );
+      window.localStorage.setItem("userID", JSON.stringify(response.data.userID));
 
       navigate("/booking");
     } catch (err) {
       console.error(err);
+      alert("Account does not exist");
     }
   };
 
@@ -57,9 +52,7 @@ export const LogInForm = () => {
       <div>
         <h1 className="mt-10 text-4xl font-medium">Welcome back</h1>
 
-        <h2 className="mt-2 text-lg text-gray-500">
-          Please enter your details.
-        </h2>
+        <h2 className="mt-2 text-lg text-gray-500">Please enter your details.</h2>
       </div>
 
       <div className="mt-10 flex flex-col">
@@ -88,9 +81,7 @@ export const LogInForm = () => {
         <p className="text-red-600">{errors.password?.message}</p>
       </div>
 
-      <p className="mt-2 text-right font-medium text-brand-500">
-        Forgot password
-      </p>
+      <p className="mt-2 text-right font-medium text-brand-500">Forgot password</p>
 
       <button className="mt-5 block w-full rounded-md bg-brand-500 px-4 py-3 text-center font-medium text-white hover:bg-brand-400">
         Log in

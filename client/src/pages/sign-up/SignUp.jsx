@@ -9,7 +9,7 @@ export const SignUp = () => {
         <img className="ml-36 min-h-screen" src={aircraft} alt="" />
       </div>
 
-      <div className="flex w-full items-center justify-center lg:mr-[90px] lg:w-1/2">
+      <div className="flex w-full items-center justify-center lg:w-1/2">
         <SignUpForm />
       </div>
     </main>
