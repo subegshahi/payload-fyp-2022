@@ -1,13 +1,12 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useCookies } from "react-cookie";
 import axios from "axios";
+import Cookies from "js-cookie";
+import { Link, useNavigate } from "react-router-dom";
 import { useLoginForm } from "../../../validations/useLogInForm";
 import { google } from "../../../imports/assets";
 
 export const LogInForm = () => {
   const { register, handleSubmit, errors } = useLoginForm();
-  const [_, setCookies] = useCookies(["access_token"]);
   const navigate = useNavigate();
 
   // const onSubmit = (data) => {
@@ -19,8 +18,8 @@ export const LogInForm = () => {
 
     try {
       const response = await axios.post("http://localhost:4000/api/login", formData);
-      setCookies("access_token", response.data.accessToken);
-      window.localStorage.setItem("userID", JSON.stringify(response.data.userID));
+      Cookies.set("access_token", response.data.accessToken, { expires: 7 });
+      Cookies.set("userID", response.data.userID, { expires: 7 });
 
       if (response.data.isContractor) {
         navigate("/contractorhome");

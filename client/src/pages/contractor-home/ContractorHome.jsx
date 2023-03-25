@@ -1,18 +1,18 @@
 import React from "react";
-import { ContractorForm, Header } from "../../imports/components";
+import { ContractorForm, Header, Sidebar } from "../../imports/components";
 
 export const ContractorHome = () => {
   return (
-    <>
-      <div className="bg-[#114c79]">
-        <Header />
+    <div className="flex min-h-screen">
+      <div className="basis-1/5 border-r border-gray-200 ">
+        <Sidebar />
       </div>
 
-      <main className="mx-auto flex min-h-screen max-w-2xl flex-col justify-center px-5">
-        <div>
+      <main className="flex flex-1 items-center justify-center px-5">
+        <div className="max-w-2xl">
           <ContractorForm />
         </div>
       </main>
-    </>
+    </div>
   );
 };

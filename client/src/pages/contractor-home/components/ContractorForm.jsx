@@ -86,7 +86,7 @@ export const ContractorForm = () => {
           </div>
 
           <div className="flex-1">
-            <label className="text-lg font-light ">Total Passenger Seats</label>
+            <label className="truncate text-lg font-light ">Total Passenger Seats</label>
             <input
               className="input-form w-full"
               type="number"
