@@ -28,10 +28,7 @@ export const BookingForm = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="w-full rounded-md bg-white p-5 shadow-sm"
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full rounded-md bg-white p-5 shadow-sm">
       {/* <div className="flex gap-10">
         <div className="space-x-2">
           <input type="radio" name="radioGroup1" checked />

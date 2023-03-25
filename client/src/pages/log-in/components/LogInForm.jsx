@@ -35,15 +35,19 @@ export const LogInForm = () => {
 
     try {
       const response = await axios.post("http://localhost:4000/api/login", formData);
-
       setCookies("access_token", response.data.accessToken);
-
       window.localStorage.setItem("userID", JSON.stringify(response.data.userID));
 
-      navigate("/booking");
+      if (response.data.isContractor) {
+        navigate("/contractorhome");
+      } else if (response.data.isAdmin) {
+        navigate("/admin");
+      } else {
+        navigate("/booking");
+      }
     } catch (err) {
       console.error(err);
-      alert("Account does not exist");
+      alert("Invalid username or password");
     }
   };
 

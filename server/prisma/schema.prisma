@@ -8,27 +8,31 @@ generator client {
 }
 
 model User {
-  id           String  @id @default(auto()) @map("_id") @db.ObjectId
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
   firstName    String
   lastName     String
-  username     String  @unique
+  username     String   @unique
   password     String
-  isContractor Boolean @default(false)
-  isAdmin      Boolean @default(false)
-  isRegistered Boolean @default(false)
+  isContractor Boolean  @default(false)
+  isAdmin      Boolean  @default(false)
+  isRegistered Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
 
 model Booking {
-  id                   String @id @default(auto()) @map("_id") @db.ObjectId
+  id                   String   @id @default(auto()) @map("_id") @db.ObjectId
   from                 String
   to                   String
   departureDate        String
   adultPassengerNumber String
   childPassengerNumber String
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
 }
 
 model Ticket {
-  id                 String @id @default(auto()) @map("_id") @db.ObjectId
+  id                 String   @id @default(auto()) @map("_id") @db.ObjectId
   airlines           String
   from               String
   to                 String
@@ -37,10 +41,14 @@ model Ticket {
   flightDuration     String
   totalPassengerSeat Int
   fare               Int
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
 }
 
 model Payment {
-  id             String @id @default(auto()) @map("_id") @db.ObjectId
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
   paymentDetails String
   amount         Int
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 }

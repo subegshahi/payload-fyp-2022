@@ -37,6 +37,10 @@ export const SignUpForm = () => {
     try {
       await axios.post("http://localhost:4000/api/register", formData);
       alert("Account registered successfully");
+
+      // Reset form after registration
+      const formElement = event.target;
+      formElement.reset();
     } catch (err) {
       console.error(err);
     }
