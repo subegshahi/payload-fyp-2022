@@ -1,30 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
+import { Link, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useLoginForm } from "../../../validations/useLogInForm";
 import { google } from "../../../imports/assets";
 
 export const LogInForm = () => {
+  const { register, handleSubmit, errors } = useLoginForm();
   const [_, setCookies] = useCookies(["access_token"]);
-
   const navigate = useNavigate();
-
-  const schema = yup.object().shape({
-    username: yup.string().required(),
-    password: yup.string().min(4).required(),
-  });
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
 
   // const onSubmit = (data) => {
   //   console.log(data);

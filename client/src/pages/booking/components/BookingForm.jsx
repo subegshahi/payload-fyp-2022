@@ -1,27 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
+import { useBookingForm } from "../../../validations/useBookingForm";
 import { AdultChildCounter } from "./AdultChildCounter";
 
 export const BookingForm = () => {
-  const schema = yup.object().shape({
-    from: yup.string().required(),
-    to: yup.string().required(),
-    departureDate: yup.date().required(),
-    // returnDate: yup.date(),
-    adult: yup.number().min(1).required(),
-    child: yup.number().min(0),
-  });
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
+  const { register, handleSubmit, errors } = useBookingForm();
 
   const onSubmit = (data) => {
     console.log(data);

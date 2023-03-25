@@ -1,31 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import { useSignUpForm } from "../../../validations/useSignUpForm";
 import { google } from "../../../imports/assets";
 
 export const SignUpForm = () => {
-  const schema = yup.object().shape({
-    isContractor: yup.boolean(),
-    firstName: yup.string().required(),
-    lastName: yup.string().required(),
-    username: yup.string().required(),
-    password: yup.string().min(4).required(),
-    confirmPassword: yup
-      .string()
-      .oneOf([yup.ref("password"), null])
-      .required(),
-  });
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
+  const { register, handleSubmit, errors } = useSignUpForm();
 
   // const onSubmit = (data) => {
   //   console.log(data);
