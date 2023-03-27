@@ -4,7 +4,7 @@ import { ContractorForm, Header, Sidebar } from "../../imports/components";
 export const ContractorHome = () => {
   return (
     <div className="flex min-h-screen">
-      <div className="basis-1/5 border-r border-gray-200 ">
+      <div className="basis-1/4">
         <Sidebar />
       </div>
 

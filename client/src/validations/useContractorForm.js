@@ -9,7 +9,7 @@ export const useContractorForm = () => {
     to: yup.string().required(),
     takeoffTime: yup.string().required(),
     landingTime: yup.string().required(),
-    fligtDuration: yup.string().required(),
+    flightDuration: yup.string().required(),
     totalPassengerSeat: yup.number().required(),
     fare: yup.number().required(),
   });

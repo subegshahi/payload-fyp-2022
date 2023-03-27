@@ -5,8 +5,6 @@ import bcrypt from "bcrypt";
 const router = express.Router();
 
 router.post("/register", async (req, res) => {
-  // console.log("Register endpoint called");
-
   const { firstName, lastName, username, password, isContractor, isAdmin } = req.body;
   const user = await prisma.user.findUnique({ where: { username } });
 
@@ -16,7 +14,7 @@ router.post("/register", async (req, res) => {
 
   const hashedPassword = await bcrypt.hash(password, 10);
 
-  const newUser = await prisma.user.create({
+  await prisma.user.create({
     data: {
       firstName,
       lastName,

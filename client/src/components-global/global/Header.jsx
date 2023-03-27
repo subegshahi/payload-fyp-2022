@@ -11,12 +11,11 @@ import {
 } from "../../imports/assets";
 
 export const Header = () => {
-  const [cookies, setCookies] = useCookies(["access_token"]);
+  const [cookies, setCookie, removeCookie] = useCookies(["access_token"]);
   const navigate = useNavigate();
 
   const logout = () => {
-    setCookies("access_token", "", { path: "/" });
-    window.localStorage.removeItem("userID");
+    removeCookie("access_token", { path: "/" });
     navigate("/");
   };
 
@@ -27,7 +26,10 @@ export const Header = () => {
           <div className="flex items-center justify-center gap-2">
             <RiHomeFill className="inline-block text-white" size={"25"} />
 
-            <Link className="font-medium text-white hover:text-brand-300" to="/">
+            <Link
+              className="font-medium text-white hover:text-brand-300"
+              to={!cookies.access_token ? "/" : "/booking"}
+            >
               Home
             </Link>
           </div>

@@ -24,3 +24,4 @@ export { CheckoutForm } from "../pages/checkout/components/CheckoutForm";
 export { Ticket } from "../pages/checkout/components/Ticket";
 export { ContractorForm } from "../pages/contractor-home/components/ContractorForm";
 export { Sidebar } from "../pages/contractor-home/components/Sidebar";
+export { UploadedFlights } from "../pages/contractor-home/components/UploadedFlights";

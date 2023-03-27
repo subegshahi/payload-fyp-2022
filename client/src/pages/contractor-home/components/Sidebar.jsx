@@ -11,17 +11,16 @@ import {
 } from "../../../imports/assets";
 
 export const Sidebar = () => {
-  const [cookies, setCookies] = useCookies(["access_token"]);
+  const [cookies, setCookie, removeCookie] = useCookies(["access_token"]);
   const navigate = useNavigate();
 
   const logout = () => {
-    setCookies("access_token", "", { path: "/" });
-    window.localStorage.removeItem("userID");
+    removeCookie("access_token", { path: "/" });
     navigate("/");
   };
 
   return (
-    <div className="flex min-h-screen flex-col justify-between bg-brand-100/70 ">
+    <div className="flex min-h-screen flex-col justify-between bg-brand-100">
       <div className="mt-20 space-y-7">
         <div className="flex items-center justify-center gap-2">
           <RiHomeFill className="inline-block text-gray-800" size={"25"} />
@@ -39,9 +38,9 @@ export const Sidebar = () => {
 
           <Link
             className="hidden text-lg font-bold text-gray-800 hover:text-brand-300 md:block"
-            to=""
+            to="/uploadedflights"
           >
-            Flights
+            Uploaded Flights
           </Link>
         </div>
 
@@ -57,7 +56,7 @@ export const Sidebar = () => {
         </div>
       </div>
 
-      <di className="mb-20 flex flex-col items-center space-y-7">
+      <div className="mb-20 flex flex-col items-center space-y-7">
         <div className="flex items-center justify-center gap-2">
           <BiUser className="inline-block text-gray-800" size={"25"} />
 
@@ -75,7 +74,7 @@ export const Sidebar = () => {
         >
           Log out
         </button>
-      </di>
+      </div>
     </div>
   );
 };

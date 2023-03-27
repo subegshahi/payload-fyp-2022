@@ -1,11 +1,29 @@
 import React from "react";
 import { useContractorForm } from "../../../validations/useContractorForm";
+import axios from "axios";
 
 export const ContractorForm = () => {
   const { register, handleSubmit, errors } = useContractorForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  // const onSubmit = (data) => {
+  //   console.log(data);
+  // };
+
+  const onSubmit = async (formData, event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post("http://localhost:4000/api/ticket", formData);
+      console.log(response.data);
+      alert("Ticket uploaded successfully!");
+
+      // Reset form
+      const formElement = event.target;
+      formElement.reset();
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred while uploading the ticket.");
+    }
   };
 
   return (
@@ -79,7 +97,7 @@ export const ContractorForm = () => {
               className="input-form w-full"
               type="text"
               placeholder="45 mins"
-              {...register("fligtDuration")}
+              {...register("flightDuration")}
             />
 
             <p className="text-red-600">{errors.fligtDuration?.message}</p>

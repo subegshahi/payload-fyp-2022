@@ -21,13 +21,15 @@ router.post("/login", async (req, res) => {
 
   const token = jwt.sign({ id: user.id }, process.env.SECRET_KEY);
 
+  let response = { accessToken: token, userID: user.id };
+
   if (user.isContractor) {
-    res.json({ accessToken: token, userID: user.id, isContractor: true });
+    response.isContractor = true;
   } else if (user.isAdmin) {
-    res.json({ accessToken: token, userID: user.id, isAdmin: true });
-  } else {
-    res.json({ accessToken: token, userID: user.id });
+    response.isAdmin = true;
   }
+
+  res.json(response);
 });
 
 export { router as loginRouter };

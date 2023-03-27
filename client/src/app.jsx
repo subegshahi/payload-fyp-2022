@@ -10,6 +10,7 @@ import {
   SearchResult,
   Checkout,
   ContractorHome,
+  UploadedFlights,
 } from "./imports/components";
 
 export const App = () => {
@@ -23,6 +24,7 @@ export const App = () => {
         <Route path="/searchresult" element={<SearchResult />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/contractorhome" element={<ContractorHome />} />
+        <Route path="/uploadedflights" element={<UploadedFlights />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<Error />} />
       </Routes>
