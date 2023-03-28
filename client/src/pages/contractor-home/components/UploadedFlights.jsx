@@ -49,10 +49,19 @@ export const UploadedFlights = () => {
   };
 
   const handleDelete = async (id) => {
-    // Make API request to delete ticket with specified ID
     try {
-      await axios.delete(`http://localhost:4000/api/ticket/${id}`, { data: { id } });
-      // If successful, update state to remove deleted ticket
+      const confirmed = window.confirm("Are you sure you want to delete this ticket?");
+
+      if (!confirmed) {
+        return;
+      }
+
+      // Make API request to delete ticket with specified ID
+      await axios.delete(`http://localhost:4000/api/ticket/${id}`, {
+        data: { id },
+      });
+
+      // If successful, update state to reflect changes
       const updatedTickets = tickets.filter((ticket) => ticket.id !== id);
       setTickets(updatedTickets);
     } catch (error) {

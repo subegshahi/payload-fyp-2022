@@ -73,8 +73,13 @@ router.put("/ticket/:id", async (req, res) => {
 });
 
 // Delete ticket
-router.delete("/ticket", async (req, res) => {
-  const { id } = req.body;
+router.delete("/ticket/:id", async (req, res) => {
+  const { id } = req.params;
+  const { id: ticketId } = req.body;
+
+  if (id !== ticketId) {
+    return res.status(400).json({ error: "ID in URL and request body do not match" });
+  }
 
   const deleteTicket = await prisma.ticket.delete({
     where: {

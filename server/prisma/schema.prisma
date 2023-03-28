@@ -33,14 +33,14 @@ model Booking {
 
 model Ticket {
   id                 String   @id @default(auto()) @map("_id") @db.ObjectId
-  airlinesName       String
+  airlinesName       String?
   from               String
   to                 String
-  takeoffTime        String
-  landingTime        String
-  flightDuration     String
-  totalPassengerSeat Int
-  fare               Int
+  takeoffTime        String?
+  landingTime        String?
+  flightDuration     String?
+  totalPassengerSeat Int?
+  fare               Int?
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
 }

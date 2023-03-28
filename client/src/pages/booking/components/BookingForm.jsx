@@ -1,14 +1,30 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { useBookingForm } from "../../../validations/useBookingForm";
 import { AdultChildCounter } from "./AdultChildCounter";
 
 export const BookingForm = () => {
   const { register, handleSubmit, errors } = useBookingForm();
+  // const [loading, setLoading] = useState(false);
+  // const [flights, setFlights] = useState([]);
 
   const onSubmit = (data) => {
     console.log(data);
   };
+
+  // const onSubmit = async (data) => {
+  //   setLoading(true);
+  //   try {
+  //     const response = await axios.post("http://localhost:4000/api/ticket", data);
+  //     setFlights(response.data);
+  //     setLoading(false);
+  //   } catch (error) {
+  //     console.error(error);
+  //     setLoading(false);
+  //   }
+  //   console.log(data); // <-- add this line
+  // };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-full rounded-md bg-white p-5 shadow-sm">

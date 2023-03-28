@@ -68,13 +68,13 @@ router.delete("/booking/:id", async (req, res) => {
     return res.status(400).json({ error: "ID in URL and request body do not match" });
   }
 
-  const deletedBooking = await prisma.booking.delete({
+  const deleteBooking = await prisma.booking.delete({
     where: {
       id,
     },
   });
 
-  res.json({ message: "Booking deleted successfully", data: deletedBooking });
+  res.json({ message: "booking deleted successfully", data: deleteBooking });
 });
 
 export { router as bookingRouter };

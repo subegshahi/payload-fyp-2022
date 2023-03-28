@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  maleUser,
-  calendar,
-  clock,
-  downloadPDF,
-} from "../../../imports/assets";
+import { maleUser, calendar, clock, downloadPDF } from "../../../imports/assets";
 
 export const Ticket = () => {
   return (
@@ -39,9 +34,7 @@ export const Ticket = () => {
           <div className="flex items-center justify-center rounded-2xl border px-4 py-4">
             <div>
               <img src={calendar} alt="" />
-              <div className="mt-2 text-sm font-semibold text-gray-400">
-                Departure Date
-              </div>
+              <div className="mt-2 text-sm font-semibold text-gray-400">Departure Date</div>
               <div className="text-xl font-semibold">Dec 9, 2023</div>
             </div>
           </div>
@@ -49,9 +42,7 @@ export const Ticket = () => {
           <div className="flex items-center justify-center rounded-2xl border px-4 py-4">
             <div>
               <img src={clock} alt="" />
-              <div className="mt-2 text-sm font-semibold text-gray-400">
-                Departure Time
-              </div>
+              <div className="mt-2 text-sm font-semibold text-gray-400">Departure Time</div>
               <div className="text-xl font-semibold">07:00 AM</div>
             </div>
           </div>
