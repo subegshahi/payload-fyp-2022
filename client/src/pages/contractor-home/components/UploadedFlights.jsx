@@ -79,7 +79,7 @@ export const UploadedFlights = () => {
         <table className="">
           <thead>
             <tr>
-              <th className="px-4 py-2">ID</th>
+              {/* <th className="px-4 py-2">ID</th> */}
               <th className="px-4 py-2">Airline Name</th>
               <th className="px-4 py-2">From</th>
               <th className="px-4 py-2">To</th>
@@ -94,7 +94,7 @@ export const UploadedFlights = () => {
           <tbody>
             {tickets.map((ticket) => (
               <tr key={ticket.id}>
-                <td className="border px-4 py-2">{ticket.id}</td>
+                {/* <td className="border px-4 py-2">{ticket.id}</td> */}
                 <td className="border px-4 py-2">{ticket.airlinesName}</td>
                 <td className="border px-4 py-2">{ticket.from}</td>
                 <td className="border px-4 py-2">{ticket.to}</td>
