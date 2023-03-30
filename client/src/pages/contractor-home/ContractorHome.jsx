@@ -1,10 +1,10 @@
 import React from "react";
-import { ContractorForm, Header, Sidebar } from "../../imports/components";
+import { ContractorForm, Sidebar } from "../../imports/components";
 
 export const ContractorHome = () => {
   return (
     <div className="flex min-h-screen">
-      <div className="basis-1/5">
+      <div className="basis-1/6">
         <Sidebar />
       </div>
 

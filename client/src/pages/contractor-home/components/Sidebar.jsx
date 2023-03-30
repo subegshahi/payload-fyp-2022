@@ -8,6 +8,8 @@ import {
   BsTicketPerforated,
   BiHomeAlt2,
   FaPlane,
+  payloadLogo,
+  payloadLogoPNG,
 } from "../../../imports/assets";
 
 export const Sidebar = () => {
@@ -20,11 +22,9 @@ export const Sidebar = () => {
   };
 
   return (
-    <div className="ml-10 flex min-h-screen flex-col justify-between border-r border-gray-300">
+    <div className="flex min-h-screen flex-col justify-between border-r border-gray-200 bg-white px-10">
       <div className="mt-20 space-y-7">
-        <div className="inline-block rounded-xl border bg-brand-400 p-5 text-white">
-          <FaPlane size={42} />
-        </div>
+        <img className="hidden h-24 w-24 md:block" src={payloadLogoPNG} alt="" />
 
         <div className="flex gap-3">
           <BiHomeAlt2 className="inline-block text-gray-800" size={"25"} />

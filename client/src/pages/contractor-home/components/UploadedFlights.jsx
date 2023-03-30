@@ -3,8 +3,6 @@ import axios from "axios";
 import { Sidebar, SalesCard } from "../../../imports/components";
 import { FiEdit, AiOutlineDelete } from "../../../imports/assets";
 
-FiEdit;
-
 export const UploadedFlights = () => {
   const [tickets, setTickets] = useState([]);
 
@@ -74,11 +72,11 @@ export const UploadedFlights = () => {
 
   return (
     <div className="flex min-h-screen">
-      <div className="basis-1/5">
+      <div className="basis-1/6">
         <Sidebar />
       </div>
 
-      <main className="mt-10 px-20 ">
+      <main className="mt-10 flex-1 px-20 ">
         <div className="flex gap-5 [&>*]:flex-1">
           <SalesCard title="Total Ticket Sales" number="7,000" growth="7%" />
           <SalesCard title="New Customers" number="1,000" growth="20%" />
@@ -87,50 +85,58 @@ export const UploadedFlights = () => {
 
         <div className="mt-10 rounded-xl border bg-white p-5">
           <div className="divide-y divide-gray-200">
-            <div className="flex [&>*]:flex-1">
-              <h1 className="text-lg font-semibold text-gray-700">Airlines Name</h1>
-              <h1 className="text-lg font-semibold text-gray-700"> </h1>
-              <h1 className="text-lg font-semibold text-gray-700">Time</h1>
-              <h1 className="text-lg font-semibold text-gray-700">Passenger Seat</h1>
+            <div className="grid grid-cols-12">
+              <h1 className="col-span-2 text-lg font-semibold text-gray-700">Airlines Name</h1>
+              <h1 className="col-span-2 text-lg font-semibold text-gray-700">Routes</h1>
+              <h1 className="col-span-2 text-lg font-semibold text-gray-700">Time</h1>
+              <h1 className="text-lg font-semibold text-gray-700">Seats</h1>
               <h1 className="text-lg font-semibold text-gray-700">Fare</h1>
-              <h1 className="text-lg font-semibold text-gray-700">Status</h1>
-              <h1 className="text-lg font-semibold text-gray-700"></h1>
-              <h1 className="text-lg font-semibold text-gray-700"></h1>
+              <h1 className="col-span-2 text-lg font-semibold text-gray-700">Status</h1>
+              <h1 className="text-lg font-semibold text-gray-700">Edit</h1>
+              <h1 className="text-lg font-semibold text-gray-700">Delete</h1>
             </div>
 
-            {tickets.map((ticket) => (
-              <div className="mt-5 flex pt-7">
-                <div className="basis-1/6 text-lg">{ticket.airlinesName}</div>
+            {tickets.map((ticket, index) => (
+              <div key={index} className="mt-5 grid grid-cols-12 pt-5">
+                <div className="col-span-2 font-medium ">{ticket.airlinesName}</div>
 
-                <div className="basis-1/5 text-lg">
+                <div className="col-span-2 font-medium ">
                   <div>{ticket.from}</div>
                   <div>to</div>
                   <div>{ticket.to}</div>
                 </div>
 
-                <div className="basis-1/5 text-lg">
-                  <div>{ticket.takeoffTime}</div>
-                  <div>{ticket.landingTime}</div>
-                  <div>{ticket.flightDuration}</div>
+                <div className="col-span-2 font-medium ">
+                  <div>{ticket.flightDuration} mins</div>
+                  <div>
+                    {ticket.takeoffTime} <span className="text-gray-500">(Take off)</span>
+                  </div>
+                  <div>
+                    {ticket.landingTime} <span className="text-gray-500">(Landing off)</span>
+                  </div>
                 </div>
 
-                <div className="flex-1 text-lg">{ticket.totalPassengerSeat}</div>
-                <div className="flex-1 text-lg">{ticket.fare}</div>
+                <div className="font-medium">{ticket.totalPassengerSeat}</div>
+                <div className="font-medium">{ticket.fare}</div>
 
-                <div className="flex-1 text-lg">
+                <div className="col-span-2 font-medium ">
                   <span className="rounded-full bg-green-300/70 px-4 py-2  text-center text-green-900">
                     Verified
                   </span>
                 </div>
 
-                <div className="basis-[5%]">
+                <div className="">
                   <button className="text-lg">
-                    <FiEdit className="text-brand-600" size={25} />
+                    <FiEdit
+                      className="text-brand-600"
+                      size={25}
+                      onClick={() => handleEdit(ticket.id)}
+                    />
                   </button>
                 </div>
 
-                <div className="basis-[5%]">
-                  <button className="text-lg">
+                <div className="">
+                  <button className="text-lg" onClick={() => handleDelete(ticket.id)}>
                     <AiOutlineDelete className="text-red-600" size={30} />
                   </button>
                 </div>
@@ -138,54 +144,6 @@ export const UploadedFlights = () => {
             ))}
           </div>
         </div>
-
-        <table className="mt-10">
-          <thead>
-            <tr>
-              {/* <th className="px-4 py-2">ID</th> */}
-              <th className="px-4 py-2">Airline Name</th>
-              <th className="px-4 py-2">From</th>
-              <th className="px-4 py-2">To</th>
-              <th className="px-4 py-2">Takeoff Time</th>
-              <th className="px-4 py-2">Landing Time</th>
-              <th className="px-4 py-2">Flight Duration</th>
-              <th className="px-4 py-2">Total Passenger Seat</th>
-              <th className="px-4 py-2">Fare</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {tickets.map((ticket) => (
-              <tr key={ticket.id}>
-                {/* <td className="border px-4 py-2">{ticket.id}</td> */}
-                <td className="border px-4 py-2">{ticket.airlinesName}</td>
-                <td className="border px-4 py-2">{ticket.from}</td>
-                <td className="border px-4 py-2">{ticket.to}</td>
-                <td className="border px-4 py-2">{ticket.takeoffTime}</td>
-                <td className="border px-4 py-2">{ticket.landingTime}</td>
-                <td className="border px-4 py-2">{ticket.flightDuration}</td>
-                <td className="border px-4 py-2">{ticket.totalPassengerSeat}</td>
-                <td className="border px-4 py-2">{ticket.fare}</td>
-                <td className="border px-4 py-2">
-                  <button
-                    className="font-semibold text-gray-500"
-                    onClick={() => handleEdit(ticket.id)}
-                  >
-                    Edit
-                  </button>
-                </td>
-                <td className="border px-4 py-2">
-                  <button
-                    className="font-semibold text-red-500"
-                    onClick={() => handleDelete(ticket.id)}
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
       </main>
     </div>
   );

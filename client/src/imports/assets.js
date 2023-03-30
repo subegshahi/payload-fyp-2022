@@ -1,4 +1,5 @@
 export { default as payloadLogo } from "../assets/logos/payload-logo.svg";
+export { default as payloadLogoPNG } from "../assets/logos/payload-logo.png";
 export { default as google } from "../assets/logos/google.svg";
 export { default as plane } from "../assets/images/plane.svg";
 export { default as maleUser } from "../assets/images/male-user.svg";

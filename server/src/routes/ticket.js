@@ -53,6 +53,11 @@ router.put("/ticket/:id", async (req, res) => {
     fare,
   } = req.body;
 
+  // Validate totalPassengerSeat and fare fields
+  if (isNaN(parseInt(totalPassengerSeat)) || isNaN(parseInt(fare))) {
+    return res.status(400).json({ error: "totalPassengerSeat and fare must be numbers" });
+  }
+
   const updatedTicket = await prisma.ticket.update({
     where: {
       id,
