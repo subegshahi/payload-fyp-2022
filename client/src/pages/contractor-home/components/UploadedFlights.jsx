@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Sidebar } from "../../../imports/components";
 import axios from "axios";
+import { Sidebar, SalesCard } from "../../../imports/components";
+import { FiEdit, AiOutlineDelete } from "../../../imports/assets";
+
+FiEdit;
 
 export const UploadedFlights = () => {
   const [tickets, setTickets] = useState([]);
@@ -71,12 +74,72 @@ export const UploadedFlights = () => {
 
   return (
     <div className="flex min-h-screen">
-      <div className="basis-1/4">
+      <div className="basis-1/5">
         <Sidebar />
       </div>
 
-      <main className="flex flex-1 items-center justify-center px-5">
-        <table className="">
+      <main className="mt-10 px-20 ">
+        <div className="flex gap-5 [&>*]:flex-1">
+          <SalesCard title="Total Ticket Sales" number="7,000" growth="7%" />
+          <SalesCard title="New Customers" number="1,000" growth="20%" />
+          <SalesCard title="Average Flights Per Day" number="3" growth="5%" />
+        </div>
+
+        <div className="mt-10 rounded-xl border bg-white p-5">
+          <div className="divide-y divide-gray-200">
+            <div className="flex [&>*]:flex-1">
+              <h1 className="text-lg font-semibold text-gray-700">Airlines Name</h1>
+              <h1 className="text-lg font-semibold text-gray-700"> </h1>
+              <h1 className="text-lg font-semibold text-gray-700">Time</h1>
+              <h1 className="text-lg font-semibold text-gray-700">Passenger Seat</h1>
+              <h1 className="text-lg font-semibold text-gray-700">Fare</h1>
+              <h1 className="text-lg font-semibold text-gray-700">Status</h1>
+              <h1 className="text-lg font-semibold text-gray-700"></h1>
+              <h1 className="text-lg font-semibold text-gray-700"></h1>
+            </div>
+
+            {tickets.map((ticket) => (
+              <div className="mt-5 flex pt-7">
+                <div className="basis-1/6 text-lg">{ticket.airlinesName}</div>
+
+                <div className="basis-1/5 text-lg">
+                  <div>{ticket.from}</div>
+                  <div>to</div>
+                  <div>{ticket.to}</div>
+                </div>
+
+                <div className="basis-1/5 text-lg">
+                  <div>{ticket.takeoffTime}</div>
+                  <div>{ticket.landingTime}</div>
+                  <div>{ticket.flightDuration}</div>
+                </div>
+
+                <div className="flex-1 text-lg">{ticket.totalPassengerSeat}</div>
+                <div className="flex-1 text-lg">{ticket.fare}</div>
+
+                <div className="flex-1 text-lg">
+                  <span className="rounded-full bg-green-300/70 px-4 py-2  text-center text-green-900">
+                    Verified
+                  </span>
+                </div>
+
+                <div className="basis-[5%]">
+                  <button className="text-lg">
+                    <FiEdit className="text-brand-600" size={25} />
+                  </button>
+                </div>
+
+                <div className="basis-[5%]">
+                  <button className="text-lg">
+                    <AiOutlineDelete className="text-red-600" size={30} />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <table className="mt-10">
           <thead>
             <tr>
               {/* <th className="px-4 py-2">ID</th> */}
