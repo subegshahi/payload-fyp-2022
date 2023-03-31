@@ -1,15 +1,21 @@
 import React from "react";
-import { ContractorForm, Sidebar } from "../../imports/components";
+import { ContractorForm, Sidebar, ContractorProfile } from "../../imports/components";
+
+import {} from "./components/ContractorProfile";
 
 export const ContractorHome = () => {
   return (
     <div className="flex min-h-screen">
-      <div className="basis-1/6">
+      <div className="basis-1/5">
         <Sidebar />
       </div>
 
-      <main className="flex flex-1 items-center justify-center px-5">
-        <div className="max-w-2xl">
+      <main className="flex flex-1 gap-10 px-20">
+        <div>
+          <ContractorProfile />
+        </div>
+
+        <div className="mt-10 flex-1 ">
           <ContractorForm />
         </div>
       </main>

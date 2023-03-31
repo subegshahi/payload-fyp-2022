@@ -26,3 +26,4 @@ export { ContractorForm } from "../pages/contractor-home/components/ContractorFo
 export { Sidebar } from "../pages/contractor-home/components/Sidebar";
 export { UploadedFlights } from "../pages/contractor-home/components/UploadedFlights";
 export { SalesCard } from "../pages/contractor-home/components/SalesCard";
+export { ContractorProfile } from "../pages/contractor-home/components/ContractorProfile";

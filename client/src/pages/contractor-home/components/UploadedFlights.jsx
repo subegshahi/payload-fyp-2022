@@ -72,7 +72,7 @@ export const UploadedFlights = () => {
 
   return (
     <div className="flex min-h-screen">
-      <div className="basis-1/6">
+      <div className="basis-1/5">
         <Sidebar />
       </div>
 
