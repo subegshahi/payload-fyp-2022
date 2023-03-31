@@ -17,6 +17,10 @@ module.exports = {
           900: "#001833",
         },
       },
+
+      fontFamily: {
+        digit: ["Orbitron"],
+      },
     },
   },
   plugins: [],

@@ -19,9 +19,9 @@ export const SalesCard = ({ title, number, growth }) => {
       <div>
         <h1 className="text-base font-semibold text-gray-500">{title}</h1>
         <div className="flex items-baseline gap-7">
-          <h2 className="text-4xl font-semibold">{number}</h2>
+          <h2 className="mt-2 font-digit text-4xl">{number}</h2>
 
-          <div className="flex items-center gap-2 text-xl font-semibold text-green-500">
+          <div className="flex items-center gap-2 font-digit text-xl font-semibold text-green-500">
             <p>{growth}</p>
             <AiOutlineArrowUp />
           </div>

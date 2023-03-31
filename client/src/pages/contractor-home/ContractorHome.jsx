@@ -10,7 +10,7 @@ export const ContractorHome = () => {
         <Sidebar />
       </div>
 
-      <main className="flex flex-1 gap-10 px-20">
+      <main className="flex-1 gap-10 px-20 lg:flex">
         <div>
           <ContractorProfile />
         </div>
