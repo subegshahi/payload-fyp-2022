@@ -77,7 +77,7 @@ export const UploadedFlights = () => {
       </div>
 
       <main className="mt-10 flex-1 px-20 ">
-        <div className="flex gap-5 [&>*]:flex-1">
+        <div className="gap-5 lg:flex  [&>*]:flex-1">
           <SalesCard title="Total Ticket Sales" number="7,000" growth="7%" />
           <SalesCard title="New Customers" number="1,000" growth="20%" />
           <SalesCard title="Average Flights Per Day" number="3" growth="5%" />
