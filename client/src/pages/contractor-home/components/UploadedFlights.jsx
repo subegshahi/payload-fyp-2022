@@ -70,6 +70,15 @@ export const UploadedFlights = () => {
     }
   };
 
+  const availableFlightsTotal = tickets.reduce((total, element) => {
+    return total + element.totalPassengerSeat;
+  }, 0);
+
+  const averageFlightPrice =
+    tickets.reduce((total, element) => {
+      return total + element.fare;
+    }, 0) / tickets.length;
+
   return (
     <div className="flex min-h-screen">
       <div className="basis-1/5">
@@ -78,9 +87,9 @@ export const UploadedFlights = () => {
 
       <main className="mt-10 flex-1 px-20 ">
         <div className="gap-5 lg:flex  [&>*]:flex-1">
-          <SalesCard title="Total Ticket Sales" number="7,000" growth="7%" />
-          <SalesCard title="New Customers" number="1,000" growth="20%" />
-          <SalesCard title="Average Flights Per Day" number="3" growth="5%" />
+          <SalesCard title="Available Tickets" number={availableFlightsTotal} growth="0%" />
+          <SalesCard title="Unverified Flights" number="5" growth="0%" />
+          <SalesCard title="Average Ticket Price" number={averageFlightPrice} growth="0%" />
         </div>
 
         <div className="mt-10 rounded-xl border bg-white p-5">

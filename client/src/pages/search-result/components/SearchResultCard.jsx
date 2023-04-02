@@ -40,9 +40,7 @@ export const SearchResultCard = () => {
         </div>
 
         <div className="mt-5 items-center justify-between lg:flex ">
-          <div className="pt-5 text-right text-2xl font-bold text-[#114c79]">
-            Fare: 15,000
-          </div>
+          <div className="pt-5 text-right text-2xl font-bold text-[#114c79]">Fare: 15,000</div>
 
           <Link className="btn-form mt-5 lg:w-1/4" to="/checkout">
             Book Ticket
