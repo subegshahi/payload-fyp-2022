@@ -32,6 +32,51 @@ router.post("/ticket", async (req, res) => {
   res.json(ticket);
 });
 
+// Search tickets
+router.post("/search", async (req, res) => {
+  const { from, to, departureDate, adultPassengerNumber, childPassengerNumber } = req.body;
+
+  // Find tickets matching search criteria
+  const tickets = await prisma.ticket.findMany({
+    where: {
+      from: {
+        equals: from,
+      },
+      to: {
+        equals: to,
+      },
+      takeoffTime: {
+        gte: new Date(departureDate),
+      },
+      totalPassengerSeat: {
+        gte: parseInt(adultPassengerNumber) + parseInt(childPassengerNumber),
+      },
+      isContractor: {
+        isNotNull: true,
+      },
+    },
+    select: {
+      id: true,
+      airlinesName: true,
+      from: true,
+      to: true,
+      takeoffTime: true,
+      landingTime: true,
+      flightDuration: true,
+      totalPassengerSeat: true,
+      fare: true,
+      isContractor: {
+        select: {
+          id: true,
+          name: true,
+        },
+      },
+    },
+  });
+
+  res.json(tickets);
+});
+
 // Get all tickets
 router.get("/ticket", async (req, res) => {
   const tickets = await prisma.ticket.findMany();

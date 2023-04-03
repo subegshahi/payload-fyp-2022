@@ -89,7 +89,11 @@ export const UploadedFlights = () => {
         <div className="gap-5 lg:flex  [&>*]:flex-1">
           <SalesCard title="Available Tickets" number={availableFlightsTotal} growth="0%" />
           <SalesCard title="Unverified Flights" number="5" growth="0%" />
-          <SalesCard title="Average Ticket Price" number={averageFlightPrice} growth="0%" />
+          <SalesCard
+            title="Average Ticket Price"
+            number={averageFlightPrice.toFixed(2)}
+            growth="0%"
+          />
         </div>
 
         <div className="mt-10 rounded-xl border bg-white p-5">
