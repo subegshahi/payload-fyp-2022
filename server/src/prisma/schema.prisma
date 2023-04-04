@@ -36,9 +36,9 @@ model Ticket {
   airlinesName       String?
   from               String
   to                 String
+  date               DateTime
   takeoffTime        String?
   landingTime        String?
-  flightDuration     String?
   totalPassengerSeat Int?
   fare               Int?
   createdAt          DateTime @default(now())

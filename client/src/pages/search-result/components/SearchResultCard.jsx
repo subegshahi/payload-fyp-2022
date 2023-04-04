@@ -2,19 +2,31 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaPlane } from "../../../imports/assets";
 
-export const SearchResultCard = () => {
+export const SearchResultCard = ({
+  airlinesName,
+  date,
+  from,
+  to,
+  takeoffTime,
+  landingTime,
+  fare,
+}) => {
   return (
     <div className="rounded-xl border bg-white p-5 shadow-sm">
-      <div className="flex items-center gap-2">
-        <FaPlane className="text-3xl" />
-        <h1 className="text-lg font-medium">Summit Air</h1>
+      <div className="flex items-baseline justify-between gap-2">
+        <div>
+          <FaPlane className="text-3xl" />
+          <h1 className="text-lg font-medium">{airlinesName}</h1>
+        </div>
+
+        <h2 className="text-lg font-medium text-gray-500">Date: {date}</h2>
       </div>
 
       <div className="divide-y-2 divide-dashed divide-gray-400">
         <div className="mt-5 flex items-center justify-between">
           <div>
-            <div className="text-lg font-semibold ">07:00 AM </div>
-            <div className="text-lg text-gray-400">Nepalgunj</div>
+            <div className="text-lg font-semibold ">{takeoffTime}</div>
+            <div className="text-lg text-gray-400">{from}</div>
           </div>
 
           {/* <div className="w-1/3 border border-dashed " /> */}
@@ -34,13 +46,13 @@ export const SearchResultCard = () => {
           </svg>
 
           <div>
-            <div className="text-lg font-semibold">07:45 AM </div>
-            <div className="text-lg text-gray-400">Rara</div>
+            <div className="text-lg font-semibold">{landingTime}</div>
+            <div className="text-lg text-gray-400">{to}</div>
           </div>
         </div>
 
         <div className="mt-5 items-center justify-between lg:flex ">
-          <div className="pt-5 text-right text-2xl font-bold text-[#114c79]">Fare: 15,000</div>
+          <div className="pt-5 text-right text-2xl font-bold text-[#114c79]">Fare: {fare}</div>
 
           <Link className="btn-form mt-5 lg:w-1/4" to="/checkout">
             Book Ticket

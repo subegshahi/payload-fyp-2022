@@ -5,16 +5,8 @@ const router = express.Router();
 
 // Upload ticket
 router.post("/ticket", async (req, res) => {
-  const {
-    airlinesName,
-    from,
-    to,
-    takeoffTime,
-    landingTime,
-    flightDuration,
-    totalPassengerSeat,
-    fare,
-  } = req.body;
+  const { airlinesName, from, to, takeoffTime, landingTime, date, totalPassengerSeat, fare } =
+    req.body;
 
   const ticket = await prisma.ticket.create({
     data: {
@@ -23,7 +15,7 @@ router.post("/ticket", async (req, res) => {
       to,
       takeoffTime,
       landingTime,
-      flightDuration,
+      date,
       totalPassengerSeat: parseInt(totalPassengerSeat),
       fare: parseInt(fare),
     },
@@ -34,7 +26,7 @@ router.post("/ticket", async (req, res) => {
 
 // Ticket Search
 router.post("/search", async (req, res) => {
-  const { from, to } = req.body;
+  const { from, to, date } = req.body;
 
   try {
     const tickets = await prisma.ticket.findMany({
@@ -46,6 +38,9 @@ router.post("/search", async (req, res) => {
         to: {
           contains: to,
           mode: "insensitive",
+        },
+        date: {
+          gte: new Date(date),
         },
       },
     });
@@ -71,16 +66,8 @@ router.get("/ticket", async (req, res) => {
 // Edit ticket
 router.put("/ticket/:id", async (req, res) => {
   const { id } = req.params;
-  const {
-    airlinesName,
-    from,
-    to,
-    takeoffTime,
-    landingTime,
-    flightDuration,
-    totalPassengerSeat,
-    fare,
-  } = req.body;
+  const { airlinesName, from, to, takeoffTime, landingTime, date, totalPassengerSeat, fare } =
+    req.body;
 
   // Validate totalPassengerSeat and fare fields.
   if (isNaN(parseInt(totalPassengerSeat)) || isNaN(parseInt(fare))) {
@@ -97,7 +84,7 @@ router.put("/ticket/:id", async (req, res) => {
       to,
       takeoffTime,
       landingTime,
-      flightDuration,
+      date,
       totalPassengerSeat: parseInt(totalPassengerSeat),
       fare: parseInt(fare),
     },

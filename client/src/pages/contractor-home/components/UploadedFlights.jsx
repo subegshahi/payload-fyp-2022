@@ -101,7 +101,7 @@ export const UploadedFlights = () => {
             <div className="grid grid-cols-12">
               <h1 className="col-span-2 text-lg font-semibold text-gray-700">Airlines Name</h1>
               <h1 className="col-span-2 text-lg font-semibold text-gray-700">Routes</h1>
-              <h1 className="col-span-2 text-lg font-semibold text-gray-700">Time</h1>
+              <h1 className="col-span-2 text-lg font-semibold text-gray-700">Date & Time</h1>
               <h1 className="text-lg font-semibold text-gray-700">Seats</h1>
               <h1 className="text-lg font-semibold text-gray-700">Fare</h1>
               <h1 className="col-span-2 text-lg font-semibold text-gray-700">Status</h1>
@@ -113,14 +113,14 @@ export const UploadedFlights = () => {
               <div key={index} className="mt-5 grid grid-cols-12 pt-5">
                 <div className="col-span-2 font-medium ">{ticket.airlinesName}</div>
 
-                <div className="col-span-2 font-medium ">
+                <div className="col-span-2 font-medium">
                   <div>{ticket.from}</div>
                   <div>to</div>
                   <div>{ticket.to}</div>
                 </div>
 
-                <div className="col-span-2 font-medium ">
-                  <div>{ticket.flightDuration} mins</div>
+                <div className="col-span-2 font-medium">
+                  <div>{ticket.date.slice(0, 10)}</div>
                   <div>
                     {ticket.takeoffTime} <span className="text-gray-500">(Take off)</span>
                   </div>
@@ -132,10 +132,14 @@ export const UploadedFlights = () => {
                 <div className="font-medium">{ticket.totalPassengerSeat}</div>
                 <div className="font-medium">{ticket.fare}</div>
 
-                <div className="col-span-2 font-medium ">
-                  <span className="rounded-full bg-green-300/70 px-4 py-2  text-center text-green-900">
+                <div className="col-span-2 text-sm font-semibold ">
+                  <span className="rounded-full bg-green-300/70 px-3 py-1  text-center text-green-900">
                     Verified
                   </span>
+
+                  {/* <span className="rounded-full bg-red-300/70 px-3 py-1  text-center text-red-900">
+                    Unverified
+                  </span> */}
                 </div>
 
                 <div className="">

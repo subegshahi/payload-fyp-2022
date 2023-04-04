@@ -74,33 +74,17 @@ export const ContractorForm = () => {
           </div>
         </div>
 
-        <div className="mt-2 flex gap-5">
-          <div className="flex-1">
-            <label className="text-lg font-light ">Take-off Time</label>
-            <input className="input-form w-full" type="time" {...register("takeoffTime")} />
-
-            <p className="text-red-600">{errors.takeoffTime?.message}</p>
-          </div>
-
-          <div className="flex-1">
-            <label className="text-lg font-light ">Landing Time</label>
-            <input className="input-form w-full" type="time" {...register("landingTime")} />
-
-            <p className="text-red-600">{errors.landingTime?.message}</p>
-          </div>
-        </div>
-
         <div className="mt-2 flex justify-between gap-5">
           <div className="flex-1">
-            <label className="text-lg font-light ">Flight Duration</label>
+            <label className="text-lg font-light">Date</label>
             <input
               className="input-form w-full"
-              type="text"
-              placeholder="45 mins"
-              {...register("flightDuration")}
+              type="date"
+              placeholder="2023-01-01"
+              {...register("date")}
             />
 
-            <p className="text-red-600">{errors.fligtDuration?.message}</p>
+            <p className="text-red-600">{errors.date?.message}</p>
           </div>
 
           <div className="flex-1">
@@ -114,6 +98,22 @@ export const ContractorForm = () => {
             />
 
             <p className="text-red-600">{errors.totalPassengerSeat?.message}</p>
+          </div>
+        </div>
+
+        <div className="mt-2 flex gap-5">
+          <div className="flex-1">
+            <label className="text-lg font-light ">Take-off Time</label>
+            <input className="input-form w-full" type="time" {...register("takeoffTime")} />
+
+            <p className="text-red-600">{errors.takeoffTime?.message}</p>
+          </div>
+
+          <div className="flex-1">
+            <label className="text-lg font-light ">Landing Time</label>
+            <input className="input-form w-full" type="time" {...register("landingTime")} />
+
+            <p className="text-red-600">{errors.landingTime?.message}</p>
           </div>
         </div>
 
