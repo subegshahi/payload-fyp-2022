@@ -32,49 +32,33 @@ router.post("/ticket", async (req, res) => {
   res.json(ticket);
 });
 
-// Search tickets
+// Ticket Search
 router.post("/search", async (req, res) => {
-  const { from, to, departureDate, adultPassengerNumber, childPassengerNumber } = req.body;
+  const { from, to } = req.body;
 
-  // Find tickets matching search criteria
-  const tickets = await prisma.ticket.findMany({
-    where: {
-      from: {
-        equals: from,
-      },
-      to: {
-        equals: to,
-      },
-      takeoffTime: {
-        gte: new Date(departureDate),
-      },
-      totalPassengerSeat: {
-        gte: parseInt(adultPassengerNumber) + parseInt(childPassengerNumber),
-      },
-      isContractor: {
-        isNotNull: true,
-      },
-    },
-    select: {
-      id: true,
-      airlinesName: true,
-      from: true,
-      to: true,
-      takeoffTime: true,
-      landingTime: true,
-      flightDuration: true,
-      totalPassengerSeat: true,
-      fare: true,
-      isContractor: {
-        select: {
-          id: true,
-          name: true,
+  try {
+    const tickets = await prisma.ticket.findMany({
+      where: {
+        from: {
+          contains: from,
+          mode: "insensitive",
+        },
+        to: {
+          contains: to,
+          mode: "insensitive",
         },
       },
-    },
-  });
+    });
 
-  res.json(tickets);
+    if (tickets.length === 0) {
+      return res.status(404).json({ message: "No tickets found" });
+    }
+
+    res.json(tickets);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
 });
 
 // Get all tickets
@@ -98,7 +82,7 @@ router.put("/ticket/:id", async (req, res) => {
     fare,
   } = req.body;
 
-  // Validate totalPassengerSeat and fare fields
+  // Validate totalPassengerSeat and fare fields.
   if (isNaN(parseInt(totalPassengerSeat)) || isNaN(parseInt(fare))) {
     return res.status(400).json({ error: "totalPassengerSeat and fare must be numbers" });
   }
