@@ -22,11 +22,11 @@ export const Sidebar = () => {
   };
 
   return (
-    <div className="flex min-h-screen flex-col justify-between border-r border-gray-200 bg-white px-10">
+    <div className="fixed inset-y-0 left-0 flex w-1/5 flex-col justify-between border-r border-gray-200 bg-white px-10">
       <div className="mt-20 space-y-7">
         <img className="hidden h-24 w-24 md:block" src={payloadLogoPNG} alt="" />
 
-        <div className="flex gap-3 transition-all duration-300 hover:scale-110">
+        <div className="flex gap-3 transition-all duration-100 hover:scale-105">
           <BiHomeAlt2 className="inline-block text-gray-800" size={"25"} />
 
           <Link
@@ -37,7 +37,7 @@ export const Sidebar = () => {
           </Link>
         </div>
 
-        <div className="flex gap-3 transition-all duration-300 hover:scale-110">
+        <div className="flex gap-3 transition-all duration-300 hover:scale-105">
           <BsTicketPerforated className="inline-block text-gray-800" size={"25"} />
 
           <Link
@@ -48,7 +48,7 @@ export const Sidebar = () => {
           </Link>
         </div>
 
-        <div className="flex gap-3 transition-all duration-300 hover:scale-110">
+        <div className="flex gap-3 transition-all duration-300 hover:scale-105">
           <MdOutlinePlace className="inline-block text-gray-800" size={"25"} />
 
           <Link
@@ -61,7 +61,7 @@ export const Sidebar = () => {
       </div>
 
       <div className="mb-20 space-y-7">
-        <div className="flex gap-3 transition-all duration-300 hover:scale-110">
+        <div className="flex gap-3 transition-all duration-300 hover:scale-105">
           <BiUser className="inline-block text-gray-800" size={"25"} />
 
           <Link
@@ -72,7 +72,7 @@ export const Sidebar = () => {
           </Link>
         </div>
 
-        <div className="flex gap-3 transition-all duration-300 hover:scale-110">
+        <div className="flex gap-3 transition-all duration-300 hover:scale-105">
           <HiOutlineLogout className="inline-block text-red-600" size={"25"} />
 
           <button
