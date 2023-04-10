@@ -11,21 +11,8 @@ export const BookingForm = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const { register, handleSubmit, errors } = useBookingForm();
 
-  // const onSubmit = (data) => {
-  //   console.log(data);
-  // };
-
-  const onSubmit = async (data) => {
-    try {
-      const response = await axios.post("http://localhost:4000/api/search", {
-        from: data.from,
-        to: data.to,
-        date: data.departureDate,
-      });
-      setTickets(response.data);
-    } catch (error) {
-      console.error(error);
-    }
+  const onSubmit = (data) => {
+    console.log(data);
   };
 
   return (

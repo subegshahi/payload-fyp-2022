@@ -85,7 +85,7 @@ export const UploadedFlights = () => {
         <Sidebar />
       </div>
 
-      <main className="mt-10 flex-1 px-20 ">
+      <main className="my-10 flex-1 px-20">
         <div className="gap-5 lg:flex  [&>*]:flex-1">
           <SalesCard title="Available Tickets" number={availableFlightsTotal} growth="0%" />
           <SalesCard title="Unverified Flights" number="5" growth="0%" />
