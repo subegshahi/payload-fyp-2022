@@ -35,6 +35,11 @@ export const getBookingById = async (req, res) => {
   res.json(booking);
 };
 
+// Search bookings
+export const getBookingForSearch = async (req, res) => {
+  res.json({ message: "Search bookings" });
+};
+
 // Update single booking by id
 export const updateBookingById = async (req, res) => {
   const { id } = req.params;

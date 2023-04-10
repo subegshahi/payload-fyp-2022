@@ -2,18 +2,23 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { SearchResultCard } from "../../../imports/components";
-
 import { useBookingForm } from "../../../validations/useBookingForm";
 import { AdultChildCounter } from "./AdultChildCounter";
 
 export const BookingForm = () => {
-  const [tickets, setTickets] = useState([]);
-  const [formSubmitted, setFormSubmitted] = useState(false);
   const { register, handleSubmit, errors } = useBookingForm();
 
   const onSubmit = (data) => {
     console.log(data);
   };
+
+  // const onSubmit = async (formData, event) => {
+  //   event.preventDefault();
+  //   try {
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   return (
     <>
@@ -153,25 +158,6 @@ export const BookingForm = () => {
           </div>
         </div>
       </form>
-
-      {formSubmitted && tickets.length > 0 ? (
-        <div className="mt-10">
-          {tickets.map((ticket, index) => (
-            <SearchResultCard
-              key={index}
-              airlinesName={ticket.airlinesName}
-              date={ticket.date.slice(0, 10)}
-              from={ticket.from}
-              to={ticket.to}
-              takeoffTime={ticket.takeoffTime}
-              landingTime={ticket.landingTime}
-              fare={ticket.fare}
-            />
-          ))}
-        </div>
-      ) : (
-        <p className="mt-10 text-center">{formSubmitted ? "No search results available." : ""}</p>
-      )}
     </>
   );
 };
