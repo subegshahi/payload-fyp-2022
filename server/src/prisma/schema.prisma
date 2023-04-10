@@ -22,14 +22,14 @@ model User {
 
 model Ticket {
   id                 String   @id @default(auto()) @map("_id") @db.ObjectId
-  airlinesName       String?
+  airlinesName       String
   from               String
   to                 String
   date               DateTime
   takeoffTime        String?
   landingTime        String?
-  totalPassengerSeat Int?
-  fare               Int?
+  totalPassengerSeat Int
+  fare               Int
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
 }
@@ -39,8 +39,11 @@ model Booking {
   from                 String
   to                   String
   departureDate        String
-  adultPassengerNumber String
-  childPassengerNumber String
+  takeoffTime          String?
+  landingTime          String?
+  adultPassengerNumber String   @default("1")
+  childPassengerNumber String   @default("0")
+  isPaid               Boolean  @default(false)
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
 }

@@ -8,6 +8,7 @@ import { google } from "../../../imports/assets";
 export const LogInForm = () => {
   const { register, handleSubmit, errors } = useLoginForm();
   const navigate = useNavigate();
+  const endpoint = "http://localhost:4000/api/login";
 
   // const onSubmit = (data) => {
   //   console.log(data);
@@ -17,7 +18,7 @@ export const LogInForm = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:4000/api/login", formData);
+      const response = await axios.post(endpoint, formData);
       Cookies.set("access_token", response.data.accessToken, { expires: 7 });
       Cookies.set("userID", response.data.userID, { expires: 7 });
 
@@ -46,7 +47,7 @@ export const LogInForm = () => {
         <label className="font-medium">Username</label>
 
         <input
-          className="mt-2 rounded-md border border-gray-300 py-2 px-4 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+          className="mt-2 rounded-md border border-gray-300 px-4 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
           type="text"
           placeholder="Enter username"
           {...register("username")}
@@ -59,7 +60,7 @@ export const LogInForm = () => {
         <label className="font-medium">Password</label>
 
         <input
-          className="mt-2 rounded-md border border-gray-300 py-2 px-4 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+          className="mt-2 rounded-md border border-gray-300 px-4 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
           type="password"
           placeholder="Enter password"
           {...register("password")}

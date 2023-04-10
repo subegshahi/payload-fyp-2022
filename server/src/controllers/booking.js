@@ -2,15 +2,27 @@ import { prisma } from "../prisma/prisma-client.js";
 
 // Create booking
 export const postBooking = async (req, res) => {
-  const { from, to, departureDate, adultPassengerNumber, childPassengerNumber } = req.body;
+  const {
+    from,
+    to,
+    departureDate,
+    takeoffTime,
+    landingTime,
+    adultPassengerNumber,
+    childPassengerNumber,
+    isPaid,
+  } = req.body;
 
   const booking = await prisma.booking.create({
     data: {
       from,
       to,
       departureDate,
+      takeoffTime,
+      landingTime,
       adultPassengerNumber,
       childPassengerNumber,
+      isPaid,
     },
   });
 
@@ -43,7 +55,16 @@ export const getBookingForSearch = async (req, res) => {
 // Update single booking by id
 export const updateBookingById = async (req, res) => {
   const { id } = req.params;
-  const { from, to, departureDate, adultPassengerNumber, childPassengerNumber } = req.body;
+  const {
+    from,
+    to,
+    departureDate,
+    takeoffTime,
+    landingTime,
+    adultPassengerNumber,
+    childPassengerNumber,
+    isPaid,
+  } = req.body;
 
   const updatedBooking = await prisma.booking.update({
     where: {
@@ -53,8 +74,11 @@ export const updateBookingById = async (req, res) => {
       from,
       to,
       departureDate,
+      takeoffTime,
+      landingTime,
       adultPassengerNumber,
       childPassengerNumber,
+      isPaid,
     },
   });
 
@@ -76,5 +100,5 @@ export const deleteBookingById = async (req, res) => {
     },
   });
 
-  res.json({ message: "booking deleted successfully", data: deleteBooking });
+  res.json({ message: "Booking deleted successfully", data: deleteBooking });
 };

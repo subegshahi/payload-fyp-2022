@@ -6,6 +6,7 @@ import { google } from "../../../imports/assets";
 
 export const SignUpForm = () => {
   const { register, handleSubmit, errors } = useSignUpForm();
+  const endpoint = "http://localhost:4000/api/register";
 
   // const onSubmit = (data) => {
   //   console.log(data);
@@ -15,7 +16,7 @@ export const SignUpForm = () => {
     event.preventDefault();
 
     try {
-      await axios.post("http://localhost:4000/api/register", formData);
+      await axios.post(endpoint, formData);
       alert("Account registered successfully");
 
       // Reset form after registration
@@ -57,7 +58,7 @@ export const SignUpForm = () => {
           </label>
 
           <input
-            className="mt-2 rounded-md border border-gray-300 py-2 px-4 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+            className="mt-2 rounded-md border border-gray-300 px-4 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
             type="text"
             placeholder="Enter first name"
             {...register("firstName")}
@@ -72,7 +73,7 @@ export const SignUpForm = () => {
           </label>
 
           <input
-            className="mt-2 rounded-md border border-gray-300 py-2 px-4 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+            className="mt-2 rounded-md border border-gray-300 px-4 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
             type="text"
             placeholder="Enter last name"
             {...register("lastName")}
@@ -88,7 +89,7 @@ export const SignUpForm = () => {
         </label>
 
         <input
-          className="mt-2 rounded-md border border-gray-300 py-2 px-4 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+          className="mt-2 rounded-md border border-gray-300 px-4 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
           type="text"
           placeholder="Enter username"
           {...register("username")}
@@ -103,7 +104,7 @@ export const SignUpForm = () => {
         </label>
 
         <input
-          className="mt-2 rounded-md border border-gray-300 py-2 px-4 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+          className="mt-2 rounded-md border border-gray-300 px-4 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
           type="Password"
           placeholder="Create password"
           {...register("password")}
@@ -118,7 +119,7 @@ export const SignUpForm = () => {
         </label>
 
         <input
-          className="mt-2 rounded-md border border-gray-300 py-2 px-4 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+          className="mt-2 rounded-md border border-gray-300 px-4 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
           type="Password"
           placeholder="Re-enter password"
           {...register("confirmPassword")}

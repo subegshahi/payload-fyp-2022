@@ -4,6 +4,7 @@ import axios from "axios";
 
 export const ContractorForm = () => {
   const { register, handleSubmit, errors } = useContractorForm();
+  const endpoint = "http://localhost:4000/api/ticket";
 
   // const onSubmit = (data) => {
   //   console.log(data);
@@ -13,7 +14,7 @@ export const ContractorForm = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:4000/api/ticket", formData);
+      const response = await axios.post(endpoint, formData);
       console.log(response.data);
       alert("Ticket uploaded successfully!");
 
