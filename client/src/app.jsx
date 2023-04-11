@@ -13,6 +13,7 @@ import {
   Checkout,
   ContractorHome,
   UploadedFlights,
+  SeatModal,
 } from "./imports/components";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ export const App = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/searchresult" element={<SearchResult />} />
+          <Route path="/seatmodal" element={<SeatModal />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/contractorhome" element={<ContractorHome />} />
           <Route path="/uploadedflights" element={<UploadedFlights />} />

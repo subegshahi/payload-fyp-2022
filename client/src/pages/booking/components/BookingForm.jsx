@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SearchResultCard } from "../../../imports/components";
 import { useBookingForm } from "../../../validations/useBookingForm";
 import { AdultChildCounter } from "./AdultChildCounter";
 
 export const BookingForm = () => {
   const { register, handleSubmit, errors } = useBookingForm();
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     console.log(data);
+    navigate("/SeatModal");
   };
 
   // const onSubmit = async (formData, event) => {
@@ -152,9 +154,9 @@ export const BookingForm = () => {
           <div className="flex gap-5">
             <button className="btn-form mt-5 lg:mt-12">Search Flight</button>
 
-            {/* <Link className="btn-form mt-5 lg:mt-12" to="/searchresult">
-            Search Result Page
-          </Link> */}
+            {/* <Link className="btn-form mt-5 lg:mt-12" to="/seatmodal">
+              Open Modal
+            </Link> */}
           </div>
         </div>
       </form>

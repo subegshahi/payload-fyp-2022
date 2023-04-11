@@ -1,5 +1,5 @@
 import React from "react";
-import { BookingForm, Header, SearchResultCard } from "../../imports/components";
+import { BookingForm, Header, SearchResultCard, SeatModal } from "../../imports/components";
 
 export const Booking = () => {
   return (
@@ -13,12 +13,6 @@ export const Booking = () => {
 
         {/* <div className="mt-10">
           <SearchResultCard />
-        </div> */}
-
-        {/* <div className="absolute inset-0  flex items-center justify-center bg-black/20  text-white">
-          <div className="mx-auto w-full max-w-7xl">
-            <SearchResultCard />
-          </div>
         </div> */}
       </main>
     </div>

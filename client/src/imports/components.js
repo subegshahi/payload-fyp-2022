@@ -27,3 +27,5 @@ export { Sidebar } from "../pages/contractor-home/components/Sidebar";
 export { UploadedFlights } from "../pages/contractor-home/components/UploadedFlights";
 export { SalesCard } from "../pages/contractor-home/components/SalesCard";
 export { ContractorProfile } from "../pages/contractor-home/components/ContractorProfile";
+export { SeatModal } from "../pages/booking/components/SeatModal";
+export { SeatButton } from "../components-global/modal/Seat-Button";
