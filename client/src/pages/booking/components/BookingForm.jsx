@@ -1,26 +1,41 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { SearchResultCard } from "../../../imports/components";
+import { SearchResultCard, SeatModal } from "../../../imports/components";
 import { useBookingForm } from "../../../validations/useBookingForm";
 import { AdultChildCounter } from "./AdultChildCounter";
 
 export const BookingForm = () => {
-  const { register, handleSubmit, errors } = useBookingForm();
-  const navigate = useNavigate();
+  const [searchResults, setSearchResults] = useState(null);
+  const [adultCount, setAdultCount] = useState(1);
+  const [childCount, setChildCount] = useState(0);
 
-  const onSubmit = (data) => {
-    console.log(data);
-    navigate("/SeatModal");
+  const { register, handleSubmit, errors } = useBookingForm();
+
+  // const onSubmit = (data) => {
+  //   console.log(data);
+  // };
+
+  const onSubmit = async (data, event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.get("http://localhost:4000/api/ticket", {
+        params: {
+          from: data.from,
+          to: data.to,
+          departureDate: data.departureDate,
+        },
+      });
+
+      setSearchResults(response.data); // Update search results state with the received data
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  // const onSubmit = async (formData, event) => {
-  //   event.preventDefault();
-  //   try {
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+  const adultCountChangeHandler = (event) => setAdultCount(parseInt(event.target.value));
+  const childCountChangeHandler = (event) => setChildCount(parseInt(event.target.value));
 
   return (
     <>
@@ -122,6 +137,7 @@ export const BookingForm = () => {
                 id=""
                 min="1"
                 defaultValue="1"
+                onChange={adultCountChangeHandler}
                 {...register("adult")}
               />
 
@@ -136,11 +152,12 @@ export const BookingForm = () => {
               <input
                 className="input-form"
                 type="number"
-                placeholder="0"
+                placeholder="1"
                 name=""
                 id=""
                 min="0"
-                defaultValue="0"
+                defaultValue="1"
+                onChange={childCountChangeHandler}
                 {...register("child")}
               />
 
@@ -153,13 +170,28 @@ export const BookingForm = () => {
 
           <div className="flex gap-5">
             <button className="btn-form mt-5 lg:mt-12">Search Flight</button>
-
-            {/* <Link className="btn-form mt-5 lg:mt-12" to="/seatmodal">
-              Open Modal
-            </Link> */}
           </div>
         </div>
       </form>
+
+      {/* Search Results */}
+      {searchResults && (
+        <div>
+          <h1 className="mt-10 text-2xl font-bold text-gray-800">Search Results:</h1>
+          {searchResults.map((result) => (
+            <SearchResultCard
+              key={result.id}
+              airlinesName={result.airlinesName}
+              date={result.date}
+              from={result.from}
+              to={result.to}
+              fare={result.fare}
+              adultCount={adultCount}
+              childCount={childCount}
+            />
+          ))}
+        </div>
+      )}
     </>
   );
 };

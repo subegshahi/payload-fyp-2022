@@ -26,7 +26,7 @@ export const Sidebar = () => {
       <div className="mt-20 space-y-7">
         <img className="hidden h-24 w-24 md:block" src={payloadLogoPNG} alt="" />
 
-        <div className="flex gap-3 transition-all duration-100 hover:scale-105">
+        <div className="flex gap-3 transition-all duration-100 hover:scale-110">
           <BiHomeAlt2 className="inline-block text-gray-800" size={"25"} />
 
           <Link
@@ -37,7 +37,7 @@ export const Sidebar = () => {
           </Link>
         </div>
 
-        <div className="flex gap-3 transition-all duration-300 hover:scale-105">
+        <div className="flex gap-3 transition-all duration-300 hover:scale-110">
           <BsTicketPerforated className="inline-block text-gray-800" size={"25"} />
 
           <Link
@@ -48,7 +48,7 @@ export const Sidebar = () => {
           </Link>
         </div>
 
-        <div className="flex gap-3 transition-all duration-300 hover:scale-105">
+        <div className="flex gap-3 transition-all duration-300 hover:scale-110">
           <MdOutlinePlace className="inline-block text-gray-800" size={"25"} />
 
           <Link
@@ -61,7 +61,7 @@ export const Sidebar = () => {
       </div>
 
       <div className="mb-20 space-y-7">
-        <div className="flex gap-3 transition-all duration-300 hover:scale-105">
+        <div className="flex gap-3 transition-all duration-300 hover:scale-110">
           <BiUser className="inline-block text-gray-800" size={"25"} />
 
           <Link
@@ -72,7 +72,7 @@ export const Sidebar = () => {
           </Link>
         </div>
 
-        <div className="flex gap-3 transition-all duration-300 hover:scale-105">
+        <div className="flex gap-3 transition-all duration-300 hover:scale-110">
           <HiOutlineLogout className="inline-block text-red-600" size={"25"} />
 
           <button

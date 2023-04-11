@@ -1,5 +1,5 @@
 import React from "react";
-import { BookingForm, Header, SearchResultCard, SeatModal } from "../../imports/components";
+import { BookingForm, Header } from "../../imports/components";
 
 export const Booking = () => {
   return (
