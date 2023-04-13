@@ -3,26 +3,32 @@ import { prisma } from "../prisma/prisma-client.js";
 // Create booking
 export const postBooking = async (req, res) => {
   const {
+    airlinesName,
     from,
     to,
-    departureDate,
+    date,
     takeoffTime,
     landingTime,
+    seatNumber,
     adultPassengerNumber,
     childPassengerNumber,
-    isPaid,
+    hasPaid,
+    paidAmount,
   } = req.body;
 
   const booking = await prisma.booking.create({
     data: {
+      airlinesName,
       from,
       to,
-      departureDate,
+      date,
       takeoffTime,
       landingTime,
-      adultPassengerNumber,
-      childPassengerNumber,
-      isPaid,
+      seatNumber,
+      adultPassengerNumber: parseInt(adultPassengerNumber),
+      childPassengerNumber: parseInt(childPassengerNumber),
+      hasPaid,
+      paidAmount: parseInt(paidAmount),
     },
   });
 
@@ -56,14 +62,17 @@ export const getBookingForSearch = async (req, res) => {
 export const updateBookingById = async (req, res) => {
   const { id } = req.params;
   const {
+    airlinesName,
     from,
     to,
-    departureDate,
+    date,
     takeoffTime,
     landingTime,
+    seatNumber,
     adultPassengerNumber,
     childPassengerNumber,
-    isPaid,
+    hasPaid,
+    paidAmount,
   } = req.body;
 
   const updatedBooking = await prisma.booking.update({
@@ -71,14 +80,17 @@ export const updateBookingById = async (req, res) => {
       id,
     },
     data: {
+      airlinesName,
       from,
       to,
-      departureDate,
+      date,
       takeoffTime,
       landingTime,
-      adultPassengerNumber,
-      childPassengerNumber,
-      isPaid,
+      seatNumber,
+      adultPassengerNumber: parseInt(adultPassengerNumber),
+      childPassengerNumber: parseInt(childPassengerNumber),
+      hasPaid,
+      paidAmount: parseInt(paidAmount),
     },
   });
 

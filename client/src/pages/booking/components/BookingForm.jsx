@@ -9,7 +9,6 @@ export const BookingForm = () => {
   const [searchResults, setSearchResults] = useState(null);
   const [adultCount, setAdultCount] = useState(1);
   const [childCount, setChildCount] = useState(0);
-
   const { register, handleSubmit, errors } = useBookingForm();
 
   // const onSubmit = (data) => {

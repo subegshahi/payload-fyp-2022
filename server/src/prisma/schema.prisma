@@ -36,22 +36,24 @@ model Ticket {
 
 model Booking {
   id                   String   @id @default(auto()) @map("_id") @db.ObjectId
+  airlinesName         String
   from                 String
   to                   String
-  departureDate        String
+  date                 DateTime
   takeoffTime          String?
   landingTime          String?
-  adultPassengerNumber String   @default("1")
-  childPassengerNumber String   @default("0")
-  isPaid               Boolean  @default(false)
+  seatNumber           String?
+  adultPassengerNumber Int      @default(1)
+  childPassengerNumber Int      @default(0)
+  hasPaid              Boolean  @default(false)
+  paidAmount           Int
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
 }
 
 model Payment {
-  id             String   @id @default(auto()) @map("_id") @db.ObjectId
-  paymentDetails String
-  amount         Int
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  amount    Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
