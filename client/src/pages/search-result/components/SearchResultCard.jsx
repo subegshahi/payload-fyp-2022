@@ -44,9 +44,9 @@ export const SearchResultCard = ({
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              strokeWidth={0.6}
+              strokeWidth={0.7}
               stroke="currentColor"
-              className="h-24 w-24 text-gray-400"
+              className="h-14 w-14 text-gray-400"
             >
               <path
                 strokeLinecap="round"
@@ -62,17 +62,16 @@ export const SearchResultCard = ({
           </div>
 
           <div className="mt-5 items-center justify-between lg:flex ">
-            <div className="mt-5">
-              <div>
-                <p className="text-sm font-semibold tracking-wide text-gray-600">
-                  Adult Number: {adultCount}
-                </p>
-                <p className="text-sm font-semibold tracking-wide text-gray-600">
-                  Child Number: {childCount}
-                </p>
-              </div>
-
+            <div className="mt-5 flex items-baseline gap-5">
               <p className="mt-2 text-right text-2xl font-bold text-[#114c79]">Fare: {fare}</p>
+
+              <p className="text-sm font-semibold tracking-wide text-gray-600">
+                Adult Number: {adultCount}
+              </p>
+
+              <p className="text-sm font-semibold tracking-wide text-gray-600">
+                Child Number: {childCount}
+              </p>
             </div>
 
             {/* <Link className="btn-form mt-5 lg:w-1/4" to="/checkout">

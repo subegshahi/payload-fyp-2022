@@ -176,7 +176,7 @@ export const BookingForm = () => {
       {/* Search Results */}
       {searchResults && (
         <div>
-          <h1 className="mt-10 text-2xl font-bold text-gray-800">Search Results:</h1>
+          <h1 className="mt-10 text-2xl font-bold text-white">Search Results:</h1>
           {searchResults.map((result) => (
             <SearchResultCard
               key={result.id}
@@ -185,6 +185,8 @@ export const BookingForm = () => {
               from={result.from}
               to={result.to}
               fare={result.fare}
+              takeoffTime={result.takeoffTime}
+              landingTime={result.landingTime}
               adultCount={adultCount}
               childCount={childCount}
             />
