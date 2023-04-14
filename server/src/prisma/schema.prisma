@@ -43,10 +43,10 @@ model Booking {
   takeoffTime          String?
   landingTime          String?
   seatNumber           String?
-  adultPassengerNumber Int      @default(1)
-  childPassengerNumber Int      @default(0)
+  adultPassengerNumber String?
+  childPassengerNumber String?
   hasPaid              Boolean  @default(false)
-  paidAmount           Int
+  paidAmount           String?
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
 }

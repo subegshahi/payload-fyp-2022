@@ -1,24 +1,45 @@
 import React, { useState } from "react";
+import { adultCounter, childCounter } from "../../../signals/AdultChildCounter";
 
 export const AdultChildCounter = () => {
-  const [adultCounter, setAdultCounter] = useState(1);
-  const [childCounter, setChildCounter] = useState(0);
-
   const increaseAdultCounter = () => {
-    setAdultCounter(adultCounter + 1);
+    adultCounter.value++;
   };
 
   const decreaseAdultCounter = () => {
-    adultCounter > 1 && setAdultCounter(adultCounter - 1);
+    if (adultCounter.value > 1) {
+      adultCounter.value = adultCounter.value - 1;
+    }
   };
 
   const increaseChildCounter = () => {
-    setChildCounter(childCounter + 1);
+    childCounter.value++;
   };
 
   const decreaseChildCounter = () => {
-    childCounter > 0 && setChildCounter(childCounter - 1);
+    if (childCounter.value > 0) {
+      childCounter.value = childCounter.value - 1;
+    }
   };
+
+  // const [adultCounter, setAdultCounter] = useState(1);
+  // const [childCounter, setChildCounter] = useState(0);
+
+  // const increaseAdultCounter = () => {
+  //   setAdultCounter(adultCounter + 1);
+  // };
+
+  // const decreaseAdultCounter = () => {
+  //   adultCounter > 1 && setAdultCounter(adultCounter - 1);
+  // };
+
+  // const increaseChildCounter = () => {
+  //   setChildCounter(childCounter + 1);
+  // };
+
+  // const decreaseChildCounter = () => {
+  //   childCounter > 0 && setChildCounter(childCounter - 1);
+  // };
 
   return (
     <>

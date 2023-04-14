@@ -1,5 +1,5 @@
 import React from "react";
-import { BookingForm, Header } from "../../imports/components";
+import { BookingForm, Header, SearchResultCard } from "../../imports/components";
 
 export const Booking = () => {
   return (
@@ -10,10 +10,6 @@ export const Booking = () => {
         <div>
           <BookingForm />
         </div>
-
-        {/* <div className="mt-10">
-          <SearchResultCard />
-        </div> */}
       </main>
     </div>
   );

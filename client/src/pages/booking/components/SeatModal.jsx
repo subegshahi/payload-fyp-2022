@@ -18,7 +18,7 @@ export const SeatModal = ({ setIsSeatModalOpen }) => {
   return (
     <>
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/30  text-white">
+        <div className="fixed inset-0 flex items-center justify-center bg-black/30 text-white">
           <div className="mx-auto max-w-7xl rounded-2xl bg-white p-10 text-gray-900">
             <div className="flex gap-16">
               <div className="flex gap-5">

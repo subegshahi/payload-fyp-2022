@@ -25,10 +25,10 @@ export const postBooking = async (req, res) => {
       takeoffTime,
       landingTime,
       seatNumber,
-      adultPassengerNumber: parseInt(adultPassengerNumber),
-      childPassengerNumber: parseInt(childPassengerNumber),
+      adultPassengerNumber,
+      childPassengerNumber,
       hasPaid,
-      paidAmount: parseInt(paidAmount),
+      paidAmount,
     },
   });
 
@@ -87,10 +87,10 @@ export const updateBookingById = async (req, res) => {
       takeoffTime,
       landingTime,
       seatNumber,
-      adultPassengerNumber: parseInt(adultPassengerNumber),
-      childPassengerNumber: parseInt(childPassengerNumber),
+      adultPassengerNumber,
+      childPassengerNumber,
       hasPaid,
-      paidAmount: parseInt(paidAmount),
+      paidAmount,
     },
   });
 

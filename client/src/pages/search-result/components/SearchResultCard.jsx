@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 import { SeatModal } from "../../../imports/components";
 import { FaPlane } from "../../../imports/assets";
 
@@ -13,13 +14,41 @@ export const SearchResultCard = ({
   fare,
   adultCount,
   childCount,
+  seatNumber,
 }) => {
   const [isSeatModalOpen, setIsSeatModalOpen] = useState(false);
+  const navigate = useNavigate(); // Get the navigate function from useNavigate hook
 
-  const openModal = (data) => {
-    console.log(data);
-    setIsSeatModalOpen(true);
+  const checkout = async (data) => {
+    try {
+      // Make POST request to endpoint
+      const response = await axios.post("http://localhost:4000/api/booking", {
+        airlinesName,
+        date,
+        from,
+        to,
+        takeoffTime,
+        landingTime,
+        fare,
+        adultCount,
+        childCount,
+        seatNumber,
+      });
+
+      // Check if data was successfully updated
+      if (response.status === 200) {
+        console.log("Data updated successfully", response.data);
+        navigate("/checkout");
+      } else {
+        console.log("Failed to update data");
+        alert("Failed to update data");
+      }
+    } catch (error) {
+      console.log("Error updating data", error);
+      alert("Error updating data");
+    }
   };
+
   return (
     <>
       <div className="my-10 rounded-xl border bg-white p-5 shadow-sm">
@@ -72,13 +101,21 @@ export const SearchResultCard = ({
               <p className="text-sm font-semibold tracking-wide text-gray-600">
                 Child Number: {childCount}
               </p>
+
+              <p className="text-sm font-semibold tracking-wide text-gray-600">
+                Seat Number: {seatNumber}
+              </p>
             </div>
 
             {/* <Link className="btn-form mt-5 lg:w-1/4" to="/checkout">
               Book Ticket
             </Link> */}
 
-            <button className="btn-form mt-5 lg:w-1/4" onClick={openModal}>
+            {/* <button className="btn-form mt-5 lg:w-1/4" onClick={openModal}>
+              Book Ticket
+            </button> */}
+
+            <button className="btn-form mt-5 lg:w-1/4" onClick={() => checkout()}>
               Book Ticket
             </button>
           </div>

@@ -5,10 +5,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 export const useBookingForm = () => {
   const schema = yup.object().shape({
     from: yup.string().required(),
-    to: yup.string().required(),
-    departureDate: yup.date().required(),
+    to: yup.string(),
+    // departureDate: yup.date().default(null),
     // returnDate: yup.date(),
-    adult: yup.number().min(1).required(),
+    adult: yup.number().min(1),
     child: yup.number().min(0),
   });
 
