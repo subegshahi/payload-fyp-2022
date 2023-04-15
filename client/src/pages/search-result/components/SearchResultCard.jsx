@@ -37,7 +37,20 @@ export const SearchResultCard = ({
       // Check if data was successfully updated
       if (response.status === 200) {
         console.log("Data updated successfully", response.data);
-        navigate("/checkout");
+        navigate("/checkout", {
+          state: {
+            airlinesName,
+            date,
+            from,
+            to,
+            takeoffTime,
+            landingTime,
+            fare,
+            adultCount,
+            childCount,
+            seatNumber,
+          },
+        });
       } else {
         console.log("Failed to update data");
         alert("Failed to update data");
