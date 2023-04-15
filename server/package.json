@@ -9,7 +9,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.js -q"
+    "dev": "nodemon src/index.js -q",
+    "conc": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "npm run dev",
+    "client": "cd ../client && npm run dev"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +20,7 @@
   "dependencies": {
     "@prisma/client": "^4.11.0",
     "bcrypt": "^5.1.0",
+    "concurrently": "^8.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
