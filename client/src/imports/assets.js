@@ -26,4 +26,4 @@ export { FiUsers } from "react-icons/fi";
 export { AiOutlineArrowUp } from "react-icons/ai";
 export { FiEdit } from "react-icons/fi";
 export { AiOutlineDelete } from "react-icons/ai";
-// export { IoAirplaneSharp } from "react-icons/io";
+// export { IoAirplaneSharp } from "react-icons/io5";

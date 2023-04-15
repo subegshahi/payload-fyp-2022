@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 export const useCheckoutForm = () => {
   const schema = yup.object().shape({
-    khaltiId: yup.string().required(),
+    khaltiId: yup.string(),
     voucherCode: yup.string(),
   });
 

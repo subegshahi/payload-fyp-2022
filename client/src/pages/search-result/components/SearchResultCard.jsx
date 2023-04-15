@@ -17,11 +17,10 @@ export const SearchResultCard = ({
   seatNumber,
 }) => {
   const [isSeatModalOpen, setIsSeatModalOpen] = useState(false);
-  const navigate = useNavigate(); // Get the navigate function from useNavigate hook
+  const navigate = useNavigate();
 
   const checkout = async (data) => {
     try {
-      // Make POST request to endpoint
       const response = await axios.post("http://localhost:4000/api/booking", {
         airlinesName,
         date,

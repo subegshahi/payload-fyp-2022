@@ -1,11 +1,20 @@
 import React from "react";
+import axios from "axios";
 import { useCheckoutForm } from "../../../validations/useCheckoutForm";
 
 export const CheckoutForm = () => {
   const { register, handleSubmit, errors } = useCheckoutForm();
+  const endpoint = "http://localhost:4000/api/stripe-checkout";
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data, event) => {
+    event.preventDefault();
+    // console.log("Form submitted");
+    try {
+      const response = await axios.post(endpoint);
+      window.location.href = response.data.url;
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

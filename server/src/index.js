@@ -7,17 +7,21 @@ import { registerRouter } from "./routes/register.js";
 import { bookingRouter } from "./routes/booking.js";
 import { ticketRouter } from "./routes/ticket.js";
 import { paymentRouter } from "./routes/payment.js";
+import { stripeRouter } from "./routes/stripe.js";
 
 const app = express();
 
 // Middlewares
 app.use(express.json());
 app.use(cors());
+
+// Routes
 app.use("/api", loginRouter);
 app.use("/api", registerRouter);
 app.use("/api", bookingRouter);
 app.use("/api", ticketRouter);
 app.use("/api", paymentRouter);
+app.use("/api", stripeRouter);
 
 // Prisma main function for testing db
 const main = async () => {
@@ -30,5 +34,5 @@ const main = async () => {
 
 // Listening for request
 app.listen(process.env.PORT, () => {
-  console.log("Server is running on port 4000!");
+  console.log(`Server is running on port ${process.env.PORT}!`);
 });

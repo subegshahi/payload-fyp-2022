@@ -11,6 +11,7 @@ import {
   Booking,
   SearchResult,
   Checkout,
+  CheckoutSuccess,
   ContractorHome,
   UploadedFlights,
 } from "./imports/components";
@@ -28,6 +29,7 @@ export const App = () => {
           <Route path="/booking" element={<Booking />} />
           <Route path="/searchresult" element={<SearchResult />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/checkoutsuccess" element={<CheckoutSuccess />} />
           <Route path="/contractorhome" element={<ContractorHome />} />
           <Route path="/uploadedflights" element={<UploadedFlights />} />
           <Route path="/admin" element={<Admin />} />
