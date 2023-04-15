@@ -26,10 +26,10 @@ model Ticket {
   from               String
   to                 String
   date               DateTime
+  fare               Int
+  totalPassengerSeat Int
   takeoffTime        String?
   landingTime        String?
-  totalPassengerSeat Int
-  fare               Int
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
 }
@@ -40,13 +40,13 @@ model Booking {
   from                 String
   to                   String
   date                 DateTime
-  takeoffTime          String?
-  landingTime          String?
+  fare                 Int
+  hasPaid              Boolean  @default(false)
   seatNumber           String?
   adultPassengerNumber String?
   childPassengerNumber String?
-  hasPaid              Boolean  @default(false)
-  paidAmount           String?
+  takeoffTime          String?
+  landingTime          String?
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
 }

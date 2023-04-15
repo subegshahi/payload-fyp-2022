@@ -2,7 +2,7 @@ import { prisma } from "../prisma/prisma-client.js";
 
 // Upload ticket
 export const postTicket = async (req, res) => {
-  const { airlinesName, from, to, takeoffTime, landingTime, date, totalPassengerSeat, fare } =
+  const { airlinesName, from, to, date, fare, totalPassengerSeat, takeoffTime, landingTime } =
     req.body;
 
   const ticket = await prisma.ticket.create({
@@ -10,11 +10,11 @@ export const postTicket = async (req, res) => {
       airlinesName,
       from,
       to,
+      date,
+      fare: parseInt(fare),
+      totalPassengerSeat: parseInt(totalPassengerSeat),
       takeoffTime,
       landingTime,
-      date,
-      totalPassengerSeat: parseInt(totalPassengerSeat),
-      fare: parseInt(fare),
     },
   });
 
@@ -31,7 +31,7 @@ export const getTicket = async (req, res) => {
 // Update ticket
 export const updateTicket = async (req, res) => {
   const { id } = req.params;
-  const { airlinesName, from, to, takeoffTime, landingTime, date, totalPassengerSeat, fare } =
+  const { airlinesName, from, to, date, fare, totalPassengerSeat, takeoffTime, landingTime } =
     req.body;
 
   // Validate totalPassengerSeat and fare fields.
@@ -47,11 +47,11 @@ export const updateTicket = async (req, res) => {
       airlinesName,
       from,
       to,
+      date,
+      fare: parseInt(fare),
+      totalPassengerSeat: parseInt(totalPassengerSeat),
       takeoffTime,
       landingTime,
-      date,
-      totalPassengerSeat: parseInt(totalPassengerSeat),
-      fare: parseInt(fare),
     },
   });
 

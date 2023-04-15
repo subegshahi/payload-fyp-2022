@@ -21,7 +21,7 @@ router.post("/stripe-checkout", async (req, res) => {
     ],
     mode: "payment",
     success_url: "http://localhost:5173/checkoutsuccess",
-    cancel_url: "http://localhost:5173/booking",
+    cancel_url: "http://localhost:5173/checkout",
     // success_url: `${process.env.CLIENT_URL}/checkoutsuccess`,
     // cancel_url: `${process.env.CLIENT_URL}/booking`,
   });

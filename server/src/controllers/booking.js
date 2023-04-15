@@ -7,13 +7,13 @@ export const postBooking = async (req, res) => {
     from,
     to,
     date,
-    takeoffTime,
-    landingTime,
+    fare,
+    hasPaid,
     seatNumber,
     adultPassengerNumber,
     childPassengerNumber,
-    hasPaid,
-    paidAmount,
+    takeoffTime,
+    landingTime,
   } = req.body;
 
   const booking = await prisma.booking.create({
@@ -22,13 +22,13 @@ export const postBooking = async (req, res) => {
       from,
       to,
       date,
-      takeoffTime,
-      landingTime,
+      fare: parseInt(fare),
+      hasPaid,
       seatNumber,
       adultPassengerNumber,
       childPassengerNumber,
-      hasPaid,
-      paidAmount,
+      takeoffTime,
+      landingTime,
     },
   });
 
@@ -66,13 +66,13 @@ export const updateBookingById = async (req, res) => {
     from,
     to,
     date,
-    takeoffTime,
-    landingTime,
+    fare,
+    hasPaid,
     seatNumber,
     adultPassengerNumber,
     childPassengerNumber,
-    hasPaid,
-    paidAmount,
+    takeoffTime,
+    landingTime,
   } = req.body;
 
   const updatedBooking = await prisma.booking.update({
@@ -84,13 +84,13 @@ export const updateBookingById = async (req, res) => {
       from,
       to,
       date,
-      takeoffTime,
-      landingTime,
+      fare: parseInt(fare),
+      hasPaid,
       seatNumber,
       adultPassengerNumber,
       childPassengerNumber,
-      hasPaid,
-      paidAmount,
+      takeoffTime,
+      landingTime,
     },
   });
 
