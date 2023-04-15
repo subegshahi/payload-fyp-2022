@@ -7,13 +7,15 @@ import {
   LogIn,
   SignUp,
   Error,
-  Admin,
   Booking,
   SearchResult,
   Checkout,
   CheckoutSuccess,
   ContractorHome,
   UploadedFlights,
+  Admin,
+  AdminProfile,
+  AdminSales,
 } from "./imports/components";
 
 const queryClient = new QueryClient();
@@ -33,6 +35,8 @@ export const App = () => {
           <Route path="/contractorhome" element={<ContractorHome />} />
           <Route path="/uploadedflights" element={<UploadedFlights />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/adminprofile" element={<AdminProfile />} />
+          <Route path="/adminsales" element={<AdminSales />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>

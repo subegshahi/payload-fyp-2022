@@ -30,3 +30,7 @@ export { SalesCard } from "../pages/contractor-home/components/SalesCard";
 export { ContractorProfile } from "../pages/contractor-home/components/ContractorProfile";
 export { SeatModal } from "../pages/booking/components/SeatModal";
 export { SeatButton } from "../components-global/modal/Seat-Button";
+export { AdminProfile } from "../pages/admin/components/AdminProfile";
+export { AdminSidebar } from "../pages/admin/components/AdminSidebar";
+export { AdminSales } from "../pages/admin/components/AdminSales";
+export { AdminSalesCard } from "../pages/admin/components/AdminSalesCard";

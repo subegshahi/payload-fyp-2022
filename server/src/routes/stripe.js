@@ -12,9 +12,9 @@ router.post("/stripe-checkout", async (req, res) => {
         price_data: {
           currency: "usd",
           product_data: {
-            name: "T-shirt",
+            name: "Ticket",
           },
-          unit_amount: 2000,
+          unit_amount: 10000,
         },
         quantity: 1,
       },

@@ -12,7 +12,7 @@ import {
   payloadLogoPNG,
 } from "../../../imports/assets";
 
-export const Sidebar = () => {
+export const AdminSidebar = () => {
   const [cookies, setCookie, removeCookie] = useCookies(["access_token"]);
   const navigate = useNavigate();
 
@@ -22,37 +22,37 @@ export const Sidebar = () => {
   };
 
   return (
-    <div className="fixed inset-y-0 left-0 flex w-1/5 flex-col justify-between border-r border-gray-200 bg-white px-10">
+    <div className="fixed inset-y-0 left-0 flex w-1/5 flex-col justify-between bg-neutral-900 px-10">
       <div className="mt-20 space-y-7">
         <img className="hidden h-24 w-24 md:block" src={payloadLogoPNG} alt="" />
 
         <div className="flex gap-3 transition-all duration-100 hover:scale-110">
-          <BiHomeAlt2 className="inline-block text-gray-800" size={"25"} />
+          <BiHomeAlt2 className="inline-block text-white" size={"25"} />
 
           <Link
-            className="hidden text-base font-semibold text-gray-800 hover:text-brand-300 md:block "
-            to="/contractorhome"
+            className="hidden text-base font-semibold text-white hover:text-brand-300 md:block "
+            to="/admin"
           >
-            Flight
+            Home
           </Link>
         </div>
 
         <div className="flex gap-3 transition-all duration-300 hover:scale-110">
-          <BsTicketPerforated className="inline-block text-gray-800" size={"25"} />
+          <BsTicketPerforated className="inline-block text-white" size={"25"} />
 
           <Link
-            className="hidden text-base font-semibold text-gray-800 hover:text-brand-300 md:block"
-            to="/uploadedflights"
+            className="hidden text-base font-semibold text-white hover:text-brand-300 md:block"
+            to="/adminsales"
           >
-            Ticket
+            Sales
           </Link>
         </div>
 
         {/* <div className="flex gap-3 transition-all duration-300 hover:scale-110">
-          <MdOutlinePlace className="inline-block text-gray-800" size={"25"} />
+          <MdOutlinePlace className="inline-block text-white" size={"25"} />
 
           <Link
-            className="hidden text-base font-semibold text-gray-800 hover:text-brand-300 md:block"
+            className="hidden text-base font-semibold text-white hover:text-brand-300 md:block"
             to=""
           >
             Destinations
@@ -62,10 +62,10 @@ export const Sidebar = () => {
 
       <div className="mb-20 space-y-7">
         {/* <div className="flex gap-3 transition-all duration-300 hover:scale-110">
-          <BiUser className="inline-block text-gray-800" size={"25"} />
+          <BiUser className="inline-block text-white" size={"25"} />
 
           <Link
-            className="hidden text-base font-semibold text-gray-800 hover:text-brand-300 md:block"
+            className="hidden text-base font-semibold text-white hover:text-brand-300 md:block"
             to=""
           >
             Account
