@@ -44,7 +44,18 @@ export const AdminSidebar = () => {
             className="hidden text-base font-semibold text-white hover:text-brand-300 md:block"
             to="/adminsales"
           >
-            Sales
+            Tickets
+          </Link>
+        </div>
+
+        <div className="flex gap-3 transition-all duration-300 hover:scale-110">
+          <BiUser className="inline-block text-white" size={"25"} />
+
+          <Link
+            className="hidden text-base font-semibold text-white hover:text-brand-300 md:block"
+            to="/adminsales"
+          >
+            Manage User
           </Link>
         </div>
 

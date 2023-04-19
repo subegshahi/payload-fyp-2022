@@ -11,11 +11,11 @@ export const ContractorHome = () => {
       </div>
 
       <main className="flex-1 gap-10 px-20 lg:flex">
-        <div className="basis-1/2">
+        {/* <div className="basis-1/2">
           <ContractorProfile />
-        </div>
+        </div> */}
 
-        <div className="mt-10 flex-1">
+        <div className="mx-auto mt-10 max-w-2xl flex-1">
           <ContractorForm />
         </div>
       </main>

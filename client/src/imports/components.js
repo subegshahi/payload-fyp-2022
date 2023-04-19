@@ -34,3 +34,6 @@ export { AdminProfile } from "../pages/admin/components/AdminProfile";
 export { AdminSidebar } from "../pages/admin/components/AdminSidebar";
 export { AdminSales } from "../pages/admin/components/AdminSales";
 export { AdminSalesCard } from "../pages/admin/components/AdminSalesCard";
+export { AdminDonutChart } from "../pages/admin/components/AdminDonutChart";
+export { AdminAreaChart } from "../pages/admin/components/AdminAreaChart";
+export { AdminBarGraph } from "../pages/admin/components/AdminBarGraph";
