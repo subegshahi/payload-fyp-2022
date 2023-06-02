@@ -1,6 +1,6 @@
 # Payload (Chartered Flights Booking Application)
 
-The Payload application is a user-friendly platform built using the **MERN stack**, **Tailwind CSS**, and **Prisma ORM**. It simplifies the process of booking tickets for chartered flights, catering to the needs of the niche industry.
+The Payload application is a user-friendly service built using the **MERN stack**, **Tailwind CSS**, and **Prisma ORM**. It simplifies the process of booking tickets for chartered flights, catering to the needs of the niche industry.
 
 ## Technologies Used
 
