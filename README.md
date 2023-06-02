@@ -17,6 +17,13 @@ The Payload application leverages the following technologies:
 
 - **Prisma ORM**: A modern Object-Relational Mapping (ORM) tool that simplifies database access and management.
 
+## Application Screenshot
+![Screenshot 2023-06-02 095546](https://github.com/subegshahi/payload-fyp-2022/assets/84019079/657ca02f-22bb-405a-8792-13a0d9ae8076)
+![Screenshot 2023-06-02 095624](https://github.com/subegshahi/payload-fyp-2022/assets/84019079/792340cd-2fd3-45a2-8373-dd0ac06e2cd3)
+![Screenshot 2023-06-02 095652](https://github.com/subegshahi/payload-fyp-2022/assets/84019079/e460ed1a-6bf9-4cec-b770-ea4d41198597)
+![Screenshot 2023-06-02 095928](https://github.com/subegshahi/payload-fyp-2022/assets/84019079/f0edb7b8-013e-49c7-83ac-ae3ce0c03f7a)
+![Screenshot 2023-06-02 100003](https://github.com/subegshahi/payload-fyp-2022/assets/84019079/0e13ae68-361f-4193-8556-c554cc441c44)
+
 ## Running the Payload Application
 
 To run the Payload application, follow the instructions below:
